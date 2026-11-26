@@ -52,7 +52,7 @@
               "id": "AC006",
               "name": "expressions",
               "shortDescription": {
-                "text": "Expressions must parse, call known functions and use contexts that exist in composite actions (no `secrets`, no `needs`)."
+                "text": "Expressions must parse, call known functions and use contexts that exist in composite actions (no `secrets`, `needs` or `vars`)."
               },
               "defaultConfiguration": {
                 "level": "error"

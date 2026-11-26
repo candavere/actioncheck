@@ -19,13 +19,13 @@ export const RULES: RuleInfo[] = [
   { id: "AC002", name: "run-needs-shell", description: "In a composite action every `run` step must set `shell`." },
   { id: "AC003", name: "inputs", description: "`inputs.<name>` must be declared under `inputs:`; declared inputs that are never used are reported as warnings." },
   { id: "AC004", name: "step-ids", description: "`steps.<id>` must refer to a step defined earlier; step ids must be unique; output values must point at existing steps." },
-  { id: "AC006", name: "expressions", description: "Expressions must parse, call known functions and use contexts that exist in composite actions (no `secrets`, no `needs`)." },
+  { id: "AC006", name: "expressions", description: "Expressions must parse, call known functions and use contexts that exist in composite actions (no `secrets`, `needs` or `vars`)." },
   { id: "AC007", name: "uses-ref", description: "`uses:` must be `owner/repo[/path]@ref`, `./local`, or `docker://image`; refs not pinned to a full commit SHA are warnings." },
 ];
 
-// Contexts usable inside composite action steps. `secrets` is documented as unavailable:
+// Contexts usable inside composite action steps. `secrets`, `needs` and `vars` are unavailable:
 // https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#secrets-context
-const ALLOWED_CONTEXTS = new Set(["github", "env", "inputs", "steps", "runner", "job", "strategy", "matrix", "vars"]);
+const ALLOWED_CONTEXTS = new Set(["github", "env", "inputs", "steps", "runner", "job", "strategy", "matrix"]);
 const KNOWN_FUNCTIONS = new Set([
   "contains", "startswith", "endswith", "format", "join", "tojson", "fromjson", "hashfiles",
   "success", "always", "cancelled", "failure",
@@ -115,6 +115,10 @@ export function lintSource(source: string, file: string): LintResult {
       }
       if (rootName === "needs") {
         report("AC006", "error", "the \"needs\" context is not available in composite actions; pass the value in as an input", off);
+        continue;
+      }
+      if (rootName === "vars") {
+        report("AC006", "error", "the \"vars\" context is not available in composite actions; pass the value in as an input", off);
         continue;
       }
       if (!ALLOWED_CONTEXTS.has(rootName)) {

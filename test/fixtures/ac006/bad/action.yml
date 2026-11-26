@@ -6,7 +6,7 @@ runs:
     - shell: bash
       run: echo "${{ secrets.GITHUB_TOKEN }}"
     - shell: bash
-      run: echo "${{ needs.build.result }} ${{ githbu.sha }}"
+      run: echo "${{ needs.build.result }} ${{ githbu.sha }} ${{ vars.X }}"
     - shell: bash
       run: echo "${{ inputs.name"
     - shell: bash

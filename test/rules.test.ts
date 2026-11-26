@@ -38,14 +38,15 @@ test("AC004 bad: missing, later and duplicate step ids", () => {
 });
 test("AC004 good", () => expectDiags("ac004/good", []));
 
-test("AC006 bad: secrets, needs, typo context, syntax, unknown function", () => {
+test("AC006 bad: secrets, needs, vars, typo context, syntax, unknown function", () => {
   expectDiags("ac006/bad", [
-    ["AC006", "error", 7], ["AC006", "error", 9], ["AC006", "error", 9],
+    ["AC006", "error", 7], ["AC006", "error", 9], ["AC006", "error", 9], ["AC006", "error", 9],
     ["AC006", "error", 11], ["AC006", "error", 13], ["AC006", "error", 13],
   ]);
   const msgs = run("ac006/bad").diagnostics.map((d) => d.message).join("\n");
   assert.match(msgs, /secrets/);
   assert.match(msgs, /needs/);
+  assert.match(msgs, /vars/);
   assert.match(msgs, /githbu/);
   assert.match(msgs, /contans/);
 });
