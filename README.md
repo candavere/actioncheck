@@ -1,5 +1,7 @@
 # actioncheck
 
+[![npm](https://img.shields.io/npm/v/actioncheck)](https://www.npmjs.com/package/actioncheck) [![CI](https://github.com/candavere/actioncheck/actions/workflows/ci.yml/badge.svg)](https://github.com/candavere/actioncheck/actions/workflows/ci.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Lint the **steps of composite GitHub Actions** (`action.yml`) on their own, with no workflow needed.
 
 actionlint (1.7.12) checks workflows. When a workflow uses a local action, it reads that action's inputs but not its `steps:`. The [kjanat/actionlint](https://github.com/kjanat/actionlint) fork does check composite steps: missing shell, unavailable contexts, duplicate ids and bad refs. Neither one catches `${{ inputs.x }}` for an input the action never declared, or `${{ steps.x.outputs.y }}` for a step id that doesn't exist. actioncheck does, standalone on any action.yml, with one runtime dependency. Use it next to them, not instead of them.
@@ -9,8 +11,16 @@ actionlint (1.7.12) checks workflows. When a workflow uses a local action, it re
 | AC002 | a `run:` step with no `shell:`, which composite actions require |
 | AC003 | `inputs.foo` used but not declared (error), or declared but never used (warning) |
 | AC004 | `steps.foo` where no step has id `foo`, or the step only runs later; duplicate step ids; outputs pointing at missing steps |
-| AC006 | broken `${{ }}` expressions, unknown functions, typo'd contexts, and `secrets` / `needs`, which composite actions can't use |
+| AC006 | broken `${{ }}` expressions, unknown functions, typo'd contexts, and `secrets` / `needs` / `vars`, which composite actions can't use |
 | AC007 | `uses:` with no `@ref` or in a malformed shape (error); a ref that isn't a full commit SHA (warning) |
+
+## Install
+
+No install needed: `npx actioncheck` runs the latest version from npm. To pin it in a project:
+
+```bash
+npm install --save-dev actioncheck
+```
 
 ## Try it
 
@@ -57,10 +67,11 @@ Exit codes: `0` no errors (warnings are allowed), `1` errors found, `2` usage or
 ### In a workflow
 
 ```yaml
+- uses: actions/checkout@v7
 - uses: actions/setup-node@v7
   with:
     node-version: 22
-- run: npx actioncheck --format github
+- run: npx --yes actioncheck@0.1.0 --format github
 ```
 
 ## What it does not do
@@ -73,4 +84,4 @@ Requires Node 20 or later. One runtime dependency (`yaml`).
 
 ## License
 
-MIT
+MIT © candavere
