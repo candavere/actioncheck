@@ -2,3 +2,9 @@ node_modules/
 dist/
 *.tgz
 SHIP_LOG.md
+actioncheck.sarif
+actual.txt
+expected.txt
+gh.txt
+try.sh
+.github/actions/hello/
