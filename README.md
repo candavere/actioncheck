@@ -2,7 +2,7 @@
 
 Lint the **steps of composite GitHub Actions** (`action.yml`) on their own, with no workflow needed.
 
-actionlint checks workflows. When a workflow uses a local action, it reads that action's inputs but not its `steps:`. Run it on an `action.yml` directly and it treats the file as a broken workflow. (Tested with actionlint 1.7.12; see [rhysd/actionlint#46](https://github.com/rhysd/actionlint/issues/46).) actioncheck covers the steps.
+actionlint (1.7.12) checks workflows. When a workflow uses a local action, it reads that action's inputs but not its `steps:`. The [kjanat/actionlint](https://github.com/kjanat/actionlint) fork does check composite steps: missing shell, unavailable contexts, duplicate ids and bad refs. Neither one catches `${{ inputs.x }}` for an input the action never declared, or `${{ steps.x.outputs.y }}` for a step id that doesn't exist. actioncheck does, standalone on any action.yml, with one runtime dependency. Use it next to them, not instead of them.
 
 | Rule | Catches |
 |---|---|
