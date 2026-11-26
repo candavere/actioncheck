@@ -2,6 +2,14 @@
   "name": "actioncheck",
   "version": "0.1.0",
   "description": "Lint the steps of composite GitHub Actions (action.yml) without a workflow: missing shell, undeclared inputs, bad step ids, unavailable contexts, malformed uses.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/candavere/actioncheck.git"
+  },
+  "homepage": "https://github.com/candavere/actioncheck#readme",
+  "bugs": {
+    "url": "https://github.com/candavere/actioncheck/issues"
+  },
   "type": "module",
   "bin": { "actioncheck": "dist/src/cli.js" },
   "files": ["dist/src", "README.md", "LICENSE"],
