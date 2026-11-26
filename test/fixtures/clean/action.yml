@@ -1,0 +1,8 @@
+name: ac002-good
+description: every run step has a shell
+runs:
+  using: composite
+  steps:
+    - run: echo hello
+      shell: bash
+    - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955

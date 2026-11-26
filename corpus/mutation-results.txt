@@ -1,0 +1,7 @@
+MISSED AC006 in actions__attest-build-provenance
+MISSED AC006 in aquasecurity__trivy-action
+MISSED AC006 in coverallsapp__github-action
+MISSED AC006 in helm__chart-testing-action
+MISSED AC006 in raven-actions__actionlint
+MISSED AC006 in reviewdog__action-shellcheck
+{"AC002":{"applied":17,"detected":17},"AC003":{"applied":19,"detected":19},"AC004":{"applied":11,"detected":11},"AC006":{"applied":19,"detected":13},"AC007":{"applied":12,"detected":12}}

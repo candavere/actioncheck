@@ -1,0 +1,132 @@
+# actioncheck run log (UTC)
+- `2026-11-25T17:46:34Z` GET https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_arm64.tar.gz -> 200
+- step0: actionlint 1.7.12 run on step0/repo (workflow + direct). See step0/actionlint-output.txt
+- GET https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/contexts.md
+- step0 complete: actionlint 1.7.12 found 0 composite-step issues (see step0/STEP0.md)
+- step0: zizmor 1.33.1 compared (step0/STEP0.md)
+- GET https://json.schemastore.org/sarif-2.1.0.json
+- wrote fixtures (11) and tests (rules, expr, format, cli) before code
+- npm view actioncheck -> 404 (name appears free, as of 2026-11-25 17:51Z)
+- npm install -> 0
+- npm test #1: 45/56 pass. Failures: (a) Node 22 also ran the .ts test sources directly via default `node --test` discovery -> wrong paths; fixed by scripts/run-tests.mjs passing explicit dist/test/*.test.js files. (b) AC002 fixture expectation was wrong in my test (said line 9; the run key is on line 8). Test corrected, code unchanged.
+- npm test #2: 46/46 pass (Node 22.23.5, linux arm64).
+- GET https://github.com/tj-actions/changed-files/commits.atom -> 200
+- GET https://raw.githubusercontent.com/tj-actions/changed-files/1254cca6ac8b9c3047ba83a11b20c9dd8d9b0572/action.yml -> 200
+- GET https://github.com/codecov/codecov-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/codecov/codecov-action/303a32d7a59b442fa8d48b6a1cc6825c09c847a5/action.yml -> 200
+- GET https://github.com/actions/attest-build-provenance/commits.atom -> 200
+- GET https://raw.githubusercontent.com/actions/attest-build-provenance/9d57eef8c06cd9d6b433effeeb7a6a77b3ff94ad/action.yml -> 200
+- GET https://github.com/actions/upload-pages-artifact/commits.atom -> 200
+- GET https://raw.githubusercontent.com/actions/upload-pages-artifact/5f327015a708106f6f1b7c9a633901af30fe80cb/action.yml -> 200
+- GET https://github.com/dtolnay/rust-toolchain/commits.atom -> 200
+- GET https://raw.githubusercontent.com/dtolnay/rust-toolchain/df2a88e9fe4098bad09cb42c3dec7187f15861fc/action.yml -> 200
+- GET https://github.com/taiki-e/install-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/taiki-e/install-action/18101caa61cb89118e2ee749786f33c6d1f8a8cb/action.yml -> 200
+- GET https://github.com/pre-commit/action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/pre-commit/action/1b06ec171f2f6faa71ed760c4042bd969e4f8b43/action.yml -> 200
+- GET https://github.com/coverallsapp/github-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/coverallsapp/github-action/7eaec0f9ffb3343970b8447736fc85442e961b67/action.yml -> 200
+- GET https://github.com/crate-ci/typos/commits.atom -> 200
+- GET https://raw.githubusercontent.com/crate-ci/typos/ec1eb601fff9480611158c3eee8c278f614174b9/action.yml -> 200
+- GET https://github.com/ludeeus/action-shellcheck/commits.atom -> 200
+- GET https://raw.githubusercontent.com/ludeeus/action-shellcheck/00b27aa7cb85167568cb48a3838b75f4265f2bca/action.yml -> HTTP Error 404: Not Found
+- GET https://raw.githubusercontent.com/ludeeus/action-shellcheck/00b27aa7cb85167568cb48a3838b75f4265f2bca/action.yaml -> 200
+- GET https://github.com/reviewdog/action-actionlint/commits.atom -> 200
+- GET https://raw.githubusercontent.com/reviewdog/action-actionlint/6c5efc3e507f3a0678fe69e82423dfe41edc86b8/action.yml -> 200
+- GET https://github.com/reviewdog/action-shellcheck/commits.atom -> 200
+- GET https://raw.githubusercontent.com/reviewdog/action-shellcheck/950c9d71535c8c49e5c029c33a438ade63b9009c/action.yml -> 200
+- GET https://github.com/sigstore/cosign-installer/commits.atom -> 200
+- GET https://raw.githubusercontent.com/sigstore/cosign-installer/881c63bd87e38389154debd8331404ce7ca8a3ab/action.yml -> 200
+- GET https://github.com/helm/chart-testing-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/helm/chart-testing-action/6743f0493328bc794f640abd68e408562327a80d/action.yml -> 200
+- GET https://github.com/aquasecurity/trivy-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/aquasecurity/trivy-action/38b337fff0a2f984d5be173c99e3f633438167ec/action.yml -> HTTP Error 404: Not Found
+- GET https://raw.githubusercontent.com/aquasecurity/trivy-action/38b337fff0a2f984d5be173c99e3f633438167ec/action.yaml -> 200
+- GET https://github.com/actions-rust-lang/setup-rust-toolchain/commits.atom -> 200
+- GET https://raw.githubusercontent.com/actions-rust-lang/setup-rust-toolchain/a188e68d0fd2bd36ad51dccb2b07ba6e75105f30/action.yml -> 200
+- GET https://github.com/withastro/action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/withastro/action/3e7c82c89db416cadeec8578d8897016314b6291/action.yml -> 200
+- GET https://github.com/getsentry/action-release/commits.atom -> 200
+- GET https://raw.githubusercontent.com/getsentry/action-release/bc8cd1484c356ad8fe1c16eab74873391db0f34f/action.yml -> 200
+- GET https://github.com/tailscale/github-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/tailscale/github-action/15aab698c4bc2ba4baecf36031adbc296b594f36/action.yml -> 200
+- GET https://github.com/raven-actions/actionlint/commits.atom -> 200
+- GET https://raw.githubusercontent.com/raven-actions/actionlint/5ed673bc77a975c2402fdcd464706912c56b103b/action.yml -> 200
+- GET https://github.com/pypa/gh-action-pypi-publish/commits.atom -> 200
+- GET https://raw.githubusercontent.com/pypa/gh-action-pypi-publish/291acab77c1c711c0667da4695ad2f428dcf00f3/action.yml -> 200
+- GET https://github.com/cachix/install-nix-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/cachix/install-nix-action/382a9ed9481c7c1f94f68b72ef105b3417c73877/action.yml -> 200
+- GET https://github.com/helm/kind-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/helm/kind-action/869f47e743e2c356d4cc1bcf1112159a47537257/action.yml -> 200
+- GET https://github.com/EmbarkStudios/cargo-deny-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/EmbarkStudios/cargo-deny-action/81891abc19297b21343b15ef67dc61e4aea74fda/action.yml -> 200
+- GET https://github.com/codespell-project/actions-codespell/commits.atom -> 200
+- GET https://raw.githubusercontent.com/codespell-project/actions-codespell/9943f5032e15e8c80f44b1196bdb4b85414d6e23/action.yml -> 200
+- GET https://github.com/tj-actions/changed-files/commits.atom -> 200
+- GET https://raw.githubusercontent.com/tj-actions/changed-files/1254cca6ac8b9c3047ba83a11b20c9dd8d9b0572/action.yml -> 200
+- GET https://github.com/codecov/codecov-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/codecov/codecov-action/303a32d7a59b442fa8d48b6a1cc6825c09c847a5/action.yml -> 200
+- GET https://github.com/actions/attest-build-provenance/commits.atom -> 200
+- GET https://raw.githubusercontent.com/actions/attest-build-provenance/9d57eef8c06cd9d6b433effeeb7a6a77b3ff94ad/action.yml -> 200
+- GET https://github.com/actions/upload-pages-artifact/commits.atom -> 200
+- GET https://raw.githubusercontent.com/actions/upload-pages-artifact/5f327015a708106f6f1b7c9a633901af30fe80cb/action.yml -> 200
+- GET https://github.com/dtolnay/rust-toolchain/commits.atom -> 200
+- GET https://raw.githubusercontent.com/dtolnay/rust-toolchain/df2a88e9fe4098bad09cb42c3dec7187f15861fc/action.yml -> 200
+- GET https://github.com/taiki-e/install-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/taiki-e/install-action/18101caa61cb89118e2ee749786f33c6d1f8a8cb/action.yml -> 200
+- GET https://github.com/pre-commit/action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/pre-commit/action/1b06ec171f2f6faa71ed760c4042bd969e4f8b43/action.yml -> 200
+- GET https://github.com/coverallsapp/github-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/coverallsapp/github-action/7eaec0f9ffb3343970b8447736fc85442e961b67/action.yml -> 200
+- GET https://github.com/crate-ci/typos/commits.atom -> 200
+- GET https://raw.githubusercontent.com/crate-ci/typos/ec1eb601fff9480611158c3eee8c278f614174b9/action.yml -> 200
+- GET https://github.com/ludeeus/action-shellcheck/commits.atom -> 200
+- GET https://raw.githubusercontent.com/ludeeus/action-shellcheck/00b27aa7cb85167568cb48a3838b75f4265f2bca/action.yml -> HTTP Error 404: Not Found
+- GET https://raw.githubusercontent.com/ludeeus/action-shellcheck/00b27aa7cb85167568cb48a3838b75f4265f2bca/action.yaml -> 200
+- GET https://github.com/reviewdog/action-actionlint/commits.atom -> 200
+- GET https://raw.githubusercontent.com/reviewdog/action-actionlint/6c5efc3e507f3a0678fe69e82423dfe41edc86b8/action.yml -> 200
+- GET https://github.com/reviewdog/action-shellcheck/commits.atom -> 200
+- GET https://raw.githubusercontent.com/reviewdog/action-shellcheck/950c9d71535c8c49e5c029c33a438ade63b9009c/action.yml -> 200
+- GET https://github.com/sigstore/cosign-installer/commits.atom -> 200
+- GET https://raw.githubusercontent.com/sigstore/cosign-installer/881c63bd87e38389154debd8331404ce7ca8a3ab/action.yml -> 200
+- GET https://github.com/helm/chart-testing-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/helm/chart-testing-action/6743f0493328bc794f640abd68e408562327a80d/action.yml -> 200
+- GET https://github.com/aquasecurity/trivy-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/aquasecurity/trivy-action/38b337fff0a2f984d5be173c99e3f633438167ec/action.yml -> HTTP Error 404: Not Found
+- GET https://raw.githubusercontent.com/aquasecurity/trivy-action/38b337fff0a2f984d5be173c99e3f633438167ec/action.yaml -> 200
+- GET https://github.com/actions-rust-lang/setup-rust-toolchain/commits.atom -> 200
+- GET https://raw.githubusercontent.com/actions-rust-lang/setup-rust-toolchain/a188e68d0fd2bd36ad51dccb2b07ba6e75105f30/action.yml -> 200
+- GET https://github.com/withastro/action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/withastro/action/3e7c82c89db416cadeec8578d8897016314b6291/action.yml -> 200
+- GET https://github.com/getsentry/action-release/commits.atom -> 200
+- GET https://raw.githubusercontent.com/getsentry/action-release/bc8cd1484c356ad8fe1c16eab74873391db0f34f/action.yml -> 200
+- GET https://github.com/tailscale/github-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/tailscale/github-action/15aab698c4bc2ba4baecf36031adbc296b594f36/action.yml -> 200
+- GET https://github.com/raven-actions/actionlint/commits.atom -> 200
+- GET https://raw.githubusercontent.com/raven-actions/actionlint/5ed673bc77a975c2402fdcd464706912c56b103b/action.yml -> 200
+- GET https://github.com/pypa/gh-action-pypi-publish/commits.atom -> 200
+- GET https://raw.githubusercontent.com/pypa/gh-action-pypi-publish/291acab77c1c711c0667da4695ad2f428dcf00f3/action.yml -> 200
+- GET https://github.com/cachix/install-nix-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/cachix/install-nix-action/382a9ed9481c7c1f94f68b72ef105b3417c73877/action.yml -> 200
+- GET https://github.com/helm/kind-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/helm/kind-action/869f47e743e2c356d4cc1bcf1112159a47537257/action.yml -> 200
+- GET https://github.com/EmbarkStudios/cargo-deny-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/EmbarkStudios/cargo-deny-action/81891abc19297b21343b15ef67dc61e4aea74fda/action.yml -> 200
+- GET https://github.com/codespell-project/actions-codespell/commits.atom -> 200
+- GET https://raw.githubusercontent.com/codespell-project/actions-codespell/9943f5032e15e8c80f44b1196bdb4b85414d6e23/action.yml -> 200
+- GET https://github.com/SonarSource/sonarqube-scan-action/commits.atom -> 200
+- GET https://raw.githubusercontent.com/SonarSource/sonarqube-scan-action/70bad232163b09d998ea0707ee80c0ec80798c16/action.yml -> 200
+- GET https://github.com/actions/checkout/releases.atom
+- GET https://github.com/actions/setup-node/releases.atom
+- smoke #1 FAILED: my sed removed the SARIF-generating line from readme-smoke.sh (script bug, not tool bug). Fixed.
+- Corpus: 25 candidate repos -> 19 composite action.yml files (manifest.json, pinned SHAs). Total 518 `${{` expressions, 79 run steps.
+- Corpus run #1: 0 errors, 2 warnings. Reviewed by hand:
+  - ludeeus/action-shellcheck `disable_matcher` declared, unused: true, but the input has a deprecationMessage (kept on purpose). Treated as noise and changed the rule to skip deprecated inputs (+ fixture).
+  - pre-commit/action `actions/cache@v4` not SHA-pinned: correct per rule definition (style warning).
+- Corpus run #2: 0 errors, 1 warning. False positives: 0 errors, 0 warnings (1 earlier warning judged noise -> fixed).
+- Mutation test (corpus/mutate.mjs): AC002 17/17, AC003 19/19, AC004 11/11, AC007 12/12, AC006 13/19. The 6 AC006 "misses" all landed in `inputs.*.default`, which actioncheck does not lint (out of scope, documented in README).
+- SARIF: unit test validates against schemastore sarif-2.1.0.json with ajv (draft-07). Also validated: README smoke output (6 results) and corpus+fixtures output (21 results): VALID.
+- npm pack: 7 files, 9.5 kB. Fresh folder /tmp/smoke2: npm init -y; npm install actioncheck-0.1.0.tgz; scripts/readme-smoke.sh extracts the README "Try it" block, runs it verbatim, diffs it against the README's expected output: PASS (plus sarif/github/path/version checks).
+- Node 20.20.2 (via npx node@20): 46/46 tests pass. Node 22.23.5: 46/46.
+- NOT RUN HERE: macOS, Windows, Node 24 (CI matrix in .github/workflows/ci.yml). Workflow action tags actions/checkout@v7 and setup-node@v7 come from releases.atom (v7.0.1 / v7.1.0). Whether the workflow runs green: UNVERIFIED.
+- Usage: pool 39% at start of build, 40% after (about 1 point used for build + step 0).

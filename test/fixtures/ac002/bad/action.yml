@@ -1,0 +1,12 @@
+name: ac002-bad
+description: run step without shell
+runs:
+  using: composite
+  steps:
+    - run: echo hello
+    - name: second
+      run: |
+        echo multi
+        echo line
+    - shell: bash
+      run: echo ok

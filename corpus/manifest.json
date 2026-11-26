@@ -1,0 +1,97 @@
+{
+ "codecov/codecov-action": {
+  "sha": "303a32d7a59b442fa8d48b6a1cc6825c09c847a5",
+  "file": "action.yml",
+  "url": "https://github.com/codecov/codecov-action/blob/303a32d7a59b442fa8d48b6a1cc6825c09c847a5/action.yml"
+ },
+ "actions/attest-build-provenance": {
+  "sha": "9d57eef8c06cd9d6b433effeeb7a6a77b3ff94ad",
+  "file": "action.yml",
+  "url": "https://github.com/actions/attest-build-provenance/blob/9d57eef8c06cd9d6b433effeeb7a6a77b3ff94ad/action.yml"
+ },
+ "actions/upload-pages-artifact": {
+  "sha": "5f327015a708106f6f1b7c9a633901af30fe80cb",
+  "file": "action.yml",
+  "url": "https://github.com/actions/upload-pages-artifact/blob/5f327015a708106f6f1b7c9a633901af30fe80cb/action.yml"
+ },
+ "dtolnay/rust-toolchain": {
+  "sha": "df2a88e9fe4098bad09cb42c3dec7187f15861fc",
+  "file": "action.yml",
+  "url": "https://github.com/dtolnay/rust-toolchain/blob/df2a88e9fe4098bad09cb42c3dec7187f15861fc/action.yml"
+ },
+ "taiki-e/install-action": {
+  "sha": "18101caa61cb89118e2ee749786f33c6d1f8a8cb",
+  "file": "action.yml",
+  "url": "https://github.com/taiki-e/install-action/blob/18101caa61cb89118e2ee749786f33c6d1f8a8cb/action.yml"
+ },
+ "pre-commit/action": {
+  "sha": "1b06ec171f2f6faa71ed760c4042bd969e4f8b43",
+  "file": "action.yml",
+  "url": "https://github.com/pre-commit/action/blob/1b06ec171f2f6faa71ed760c4042bd969e4f8b43/action.yml"
+ },
+ "coverallsapp/github-action": {
+  "sha": "7eaec0f9ffb3343970b8447736fc85442e961b67",
+  "file": "action.yml",
+  "url": "https://github.com/coverallsapp/github-action/blob/7eaec0f9ffb3343970b8447736fc85442e961b67/action.yml"
+ },
+ "crate-ci/typos": {
+  "sha": "ec1eb601fff9480611158c3eee8c278f614174b9",
+  "file": "action.yml",
+  "url": "https://github.com/crate-ci/typos/blob/ec1eb601fff9480611158c3eee8c278f614174b9/action.yml"
+ },
+ "ludeeus/action-shellcheck": {
+  "sha": "00b27aa7cb85167568cb48a3838b75f4265f2bca",
+  "file": "action.yaml",
+  "url": "https://github.com/ludeeus/action-shellcheck/blob/00b27aa7cb85167568cb48a3838b75f4265f2bca/action.yaml"
+ },
+ "reviewdog/action-shellcheck": {
+  "sha": "950c9d71535c8c49e5c029c33a438ade63b9009c",
+  "file": "action.yml",
+  "url": "https://github.com/reviewdog/action-shellcheck/blob/950c9d71535c8c49e5c029c33a438ade63b9009c/action.yml"
+ },
+ "sigstore/cosign-installer": {
+  "sha": "881c63bd87e38389154debd8331404ce7ca8a3ab",
+  "file": "action.yml",
+  "url": "https://github.com/sigstore/cosign-installer/blob/881c63bd87e38389154debd8331404ce7ca8a3ab/action.yml"
+ },
+ "helm/chart-testing-action": {
+  "sha": "6743f0493328bc794f640abd68e408562327a80d",
+  "file": "action.yml",
+  "url": "https://github.com/helm/chart-testing-action/blob/6743f0493328bc794f640abd68e408562327a80d/action.yml"
+ },
+ "aquasecurity/trivy-action": {
+  "sha": "38b337fff0a2f984d5be173c99e3f633438167ec",
+  "file": "action.yaml",
+  "url": "https://github.com/aquasecurity/trivy-action/blob/38b337fff0a2f984d5be173c99e3f633438167ec/action.yaml"
+ },
+ "actions-rust-lang/setup-rust-toolchain": {
+  "sha": "a188e68d0fd2bd36ad51dccb2b07ba6e75105f30",
+  "file": "action.yml",
+  "url": "https://github.com/actions-rust-lang/setup-rust-toolchain/blob/a188e68d0fd2bd36ad51dccb2b07ba6e75105f30/action.yml"
+ },
+ "withastro/action": {
+  "sha": "3e7c82c89db416cadeec8578d8897016314b6291",
+  "file": "action.yml",
+  "url": "https://github.com/withastro/action/blob/3e7c82c89db416cadeec8578d8897016314b6291/action.yml"
+ },
+ "getsentry/action-release": {
+  "sha": "bc8cd1484c356ad8fe1c16eab74873391db0f34f",
+  "file": "action.yml",
+  "url": "https://github.com/getsentry/action-release/blob/bc8cd1484c356ad8fe1c16eab74873391db0f34f/action.yml"
+ },
+ "raven-actions/actionlint": {
+  "sha": "5ed673bc77a975c2402fdcd464706912c56b103b",
+  "file": "action.yml",
+  "url": "https://github.com/raven-actions/actionlint/blob/5ed673bc77a975c2402fdcd464706912c56b103b/action.yml"
+ },
+ "pypa/gh-action-pypi-publish": {
+  "sha": "291acab77c1c711c0667da4695ad2f428dcf00f3",
+  "file": "action.yml",
+  "url": "https://github.com/pypa/gh-action-pypi-publish/blob/291acab77c1c711c0667da4695ad2f428dcf00f3/action.yml"
+ },
+ "cachix/install-nix-action": {
+  "sha": "382a9ed9481c7c1f94f68b72ef105b3417c73877",
+  "file": "action.yml",
+  "url": "https://github.com/cachix/install-nix-action/blob/382a9ed9481c7c1f94f68b72ef105b3417c73877/action.yml"
+ }
+}

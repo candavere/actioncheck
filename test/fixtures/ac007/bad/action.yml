@@ -1,0 +1,9 @@
+name: ac007-bad
+description: uses problems
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout
+    - uses: actions/setup-node@v4
+    - uses: "@v1"
+    - uses: actions/cache@main

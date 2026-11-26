@@ -1,0 +1,15 @@
+name: ac003-bad
+description: undeclared and unused inputs
+inputs:
+  token:
+    description: used
+  unused-one:
+    description: never referenced
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "${{ inputs.token }} ${{ inputs.tokn }}"
+    - if: inputs.verbose == 'true'
+      shell: bash
+      run: echo verbose

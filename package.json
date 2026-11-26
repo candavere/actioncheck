@@ -1,0 +1,18 @@
+{
+  "name": "actioncheck",
+  "version": "0.1.0",
+  "description": "Lint the steps of composite GitHub Actions (action.yml) without a workflow: missing shell, undeclared inputs, bad step ids, unavailable contexts, malformed uses.",
+  "type": "module",
+  "bin": { "actioncheck": "dist/src/cli.js" },
+  "files": ["dist/src", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node scripts/run-tests.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": ["github-actions", "composite-action", "action.yml", "lint", "linter", "ci"],
+  "license": "MIT",
+  "dependencies": { "yaml": "^2.8.0" },
+  "devDependencies": { "typescript": "~5.9.0", "@types/node": "^20.19.0", "ajv": "^8.17.1" }
+}

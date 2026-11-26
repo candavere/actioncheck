@@ -1,0 +1,9 @@
+name: ac007-good
+description: pinned, local and docker refs
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+    - uses: ./local-action
+    - uses: docker://alpine:3.20
+    - uses: github/codeql-action/init@df559355d593797519d70b90fc8edd5db049e7a2

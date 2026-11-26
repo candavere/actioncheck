@@ -1,0 +1,18 @@
+name: ac004-bad
+description: step id problems
+outputs:
+  out:
+    description: points at missing step
+    value: ${{ steps.nope.outputs.value }}
+runs:
+  using: composite
+  steps:
+    - id: first
+      shell: bash
+      run: echo "${{ steps.later.outputs.x }}"
+    - id: first
+      shell: bash
+      run: echo dup
+    - id: later
+      shell: bash
+      run: echo "x=1" >> "$GITHUB_OUTPUT"

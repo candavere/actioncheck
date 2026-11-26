@@ -1,0 +1,13 @@
+name: ac006-bad
+description: unavailable contexts and broken expressions
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "${{ secrets.GITHUB_TOKEN }}"
+    - shell: bash
+      run: echo "${{ needs.build.result }} ${{ githbu.sha }}"
+    - shell: bash
+      run: echo "${{ inputs.name"
+    - shell: bash
+      run: echo "${{ fromJSON('[1' }} ${{ contans(github.ref, 'x') }}"

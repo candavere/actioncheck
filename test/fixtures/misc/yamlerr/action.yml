@@ -1,0 +1,5 @@
+name: broken
+runs:
+  using: composite
+  steps:
+    - run: [unclosed

@@ -1,0 +1,7 @@
+.github/actions/hello/action.yml:4:3: warning: input "who" is declared but never used in this action [AC003]
+.github/actions/hello/action.yml:9:7: error: "run" step has no "shell"; composite actions require one (for example "shell: bash") [AC002]
+.github/actions/hello/action.yml:9:28: error: input "whom" is not declared in this action's inputs (declared: who) [AC003]
+.github/actions/hello/action.yml:10:13: error: "uses: actions/checkout" has no ref; add "@<commit-sha>" (or a tag) [AC007]
+.github/actions/hello/action.yml:12:22: error: the "secrets" context is not available in composite actions; pass the secret in as an input [AC006]
+.github/actions/hello/action.yml:12:50: error: step id "build" is not defined in this action [AC004]
+actioncheck: 1 composite action(s) checked, 5 error(s), 1 warning(s)

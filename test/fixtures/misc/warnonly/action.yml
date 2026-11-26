@@ -1,0 +1,6 @@
+name: warn-only
+description: only an unpinned ref
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4

@@ -1,0 +1,15 @@
+name: ac004-good
+description: outputs reference real, earlier steps
+outputs:
+  out:
+    description: ok
+    value: ${{ steps.make.outputs.value }}
+runs:
+  using: composite
+  steps:
+    - id: make
+      shell: bash
+      run: echo "value=1" >> "$GITHUB_OUTPUT"
+    - shell: bash
+      if: ${{ steps.make.outputs.value == '1' && success() }}
+      run: echo "${{ steps.make.outputs.value }} ${{ github.action_path }} ${{ runner.os }}"
