@@ -1,0 +1,29 @@
+probe (ubuntu-latest)	control (workflow step)	2026-11-27T12:50:37.2153501Z ##[group]Run echo "CONTROL needs.x.result=[success]"
+probe (ubuntu-latest)	control (workflow step)	2026-11-27T12:50:37.2154671Z ^[[36;1mecho "CONTROL needs.x.result=[success]"^[[0m
+probe (ubuntu-latest)	control (workflow step)	2026-11-27T12:50:37.2155767Z ^[[36;1mecho "CONTROL vars.X=[probe-value]"^[[0m
+probe (ubuntu-latest)	control (workflow step)	2026-11-27T12:50:37.2156717Z ^[[36;1mecho "CONTROL matrix.os=[ubuntu-latest]"^[[0m
+probe (ubuntu-latest)	control (workflow step)	2026-11-27T12:50:37.2264766Z CONTROL needs.x.result=[success]
+probe (ubuntu-latest)	control (workflow step)	2026-11-27T12:50:37.2266930Z CONTROL vars.X=[probe-value]
+probe (ubuntu-latest)	control (workflow step)	2026-11-27T12:50:37.2268018Z CONTROL matrix.os=[ubuntu-latest]
+probe (ubuntu-latest)	Run ./.github/actions/probe-needs	2026-11-27T12:50:37.2453780Z ##[error]/home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-needs/action.yml (Line: 7, Col: 12): Unrecognized named-value: 'needs'. Located at position 1 within expression: needs.x.result
+probe (ubuntu-latest)	Run ./.github/actions/probe-needs	2026-11-27T12:50:37.2488878Z ##[error]GitHub.DistributedTask.ObjectTemplating.TemplateValidationException: The template is not valid. /home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-needs/action.yml (Line: 7, Col: 12): Unrecognized named-value: 'needs'. Located at position 1 within expression: needs.x.result
+probe (ubuntu-latest)	Run ./.github/actions/probe-needs	2026-11-27T12:50:37.2523848Z ##[error]Failed to load /home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-needs/action.yml
+probe (ubuntu-latest)	Run ./.github/actions/probe-vars	2026-11-27T12:50:37.2592087Z ##[error]/home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-vars/action.yml (Line: 7, Col: 12): Unrecognized named-value: 'vars'. Located at position 1 within expression: vars.X
+probe (ubuntu-latest)	Run ./.github/actions/probe-vars	2026-11-27T12:50:37.2609745Z ##[error]GitHub.DistributedTask.ObjectTemplating.TemplateValidationException: The template is not valid. /home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-vars/action.yml (Line: 7, Col: 12): Unrecognized named-value: 'vars'. Located at position 1 within expression: vars.X
+probe (ubuntu-latest)	Run ./.github/actions/probe-vars	2026-11-27T12:50:37.2626724Z ##[error]Failed to load /home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-vars/action.yml
+probe (ubuntu-latest)	Run ./.github/actions/probe-matrix	2026-11-27T12:50:37.2842577Z ##[start-action display=Run echo "PROBE matrix.os=[ubuntu-latest%5D";id=p_matrix.__run]
+probe (ubuntu-latest)	Run ./.github/actions/probe-matrix	2026-11-27T12:50:37.2886650Z ##[group]Run echo "PROBE matrix.os=[ubuntu-latest]"
+probe (ubuntu-latest)	Run ./.github/actions/probe-matrix	2026-11-27T12:50:37.2887567Z ^[[36;1mecho "PROBE matrix.os=[ubuntu-latest]"^[[0m
+probe (ubuntu-latest)	Run ./.github/actions/probe-matrix	2026-11-27T12:50:37.2976537Z PROBE matrix.os=[ubuntu-latest]
+probe (ubuntu-latest)	Run ./.github/actions/probe-steps	2026-11-27T12:50:37.3340491Z ##[start-action display=Run echo "PROBE steps.first.outputs.value=[from-first%5D";id=p_steps.__run]
+probe (ubuntu-latest)	Run ./.github/actions/probe-steps	2026-11-27T12:50:37.3375506Z ##[group]Run echo "PROBE steps.first.outputs.value=[from-first]"
+probe (ubuntu-latest)	Run ./.github/actions/probe-steps	2026-11-27T12:50:37.3376571Z ^[[36;1mecho "PROBE steps.first.outputs.value=[from-first]"^[[0m
+probe (ubuntu-latest)	Run ./.github/actions/probe-steps	2026-11-27T12:50:37.3451489Z PROBE steps.first.outputs.value=[from-first]
+probe (ubuntu-latest)	Run ./.github/actions/probe-all	2026-11-27T12:50:37.3532190Z ##[error]/home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-all/action.yml (Line: 14, Col: 12): Unrecognized named-value: 'needs'. Located at position 1 within expression: needs.x.result
+probe (ubuntu-latest)	Run ./.github/actions/probe-all	2026-11-27T12:50:37.3549831Z ##[error]GitHub.DistributedTask.ObjectTemplating.TemplateValidationException: The template is not valid. /home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-all/action.yml (Line: 14, Col: 12): Unrecognized named-value: 'needs'. Located at position 1 within expression: needs.x.result
+probe (ubuntu-latest)	Run ./.github/actions/probe-all	2026-11-27T12:50:37.3567003Z ##[error]Failed to load /home/runner/work/actioncheck-probe/actioncheck-probe/./.github/actions/probe-all/action.yml
+probe (ubuntu-latest)	summary	2026-11-27T12:50:37.3618006Z ##[group]Run echo "SUMMARY needs=failure vars=failure matrix=success steps=success all=failure"
+probe (ubuntu-latest)	summary	2026-11-27T12:50:37.3619826Z ^[[36;1mecho "SUMMARY needs=failure vars=failure matrix=success steps=success all=failure"^[[0m
+probe (ubuntu-latest)	summary	2026-11-27T12:50:37.3621166Z ^[[36;1mecho "SUMMARY p_steps.outputs.value=[from-first] p_all.outputs.value=[]"^[[0m
+probe (ubuntu-latest)	summary	2026-11-27T12:50:37.3697444Z SUMMARY needs=failure vars=failure matrix=success steps=success all=failure
+probe (ubuntu-latest)	summary	2026-11-27T12:50:37.3699276Z SUMMARY p_steps.outputs.value=[from-first] p_all.outputs.value=[]

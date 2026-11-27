@@ -1,0 +1,7 @@
+name: probe-vars
+description: reads the vars context inside a composite step
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "PROBE vars.X=[${{ vars.X }}]"

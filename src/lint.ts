@@ -24,11 +24,12 @@ export const RULES: RuleInfo[] = [
 ];
 
 // Contexts usable inside composite action steps.
-// `secrets`: VERIFIED unavailable. The docs say "The secrets context is not available for composite actions":
+// `secrets`: unavailable. The docs say "The secrets context is not available for composite actions":
 //   https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#secrets-context
-// `needs` and `vars`: UNVERIFIED. The contexts docs do not say either one is unavailable in composite
-//   actions, and jactionlint 2.6.0 treats both as available. The rules below still report them as errors
-//   (behaviour unchanged) until a runner probe (probe-repo/RUN-ME.md) shows what GitHub actually does.
+// `needs` and `vars`: unavailable in `run:` expressions. Verified on GitHub's runner in run 46002009819:
+//   "Unrecognized named-value: 'needs'" and "Unrecognized named-value: 'vars'", summary
+//   "needs=failure vars=failure matrix=success steps=success all=failure" (evidence/probe.log).
+//   Scope is run: expressions only; if:/env:/with: were not probed.
 const ALLOWED_CONTEXTS = new Set(["github", "env", "inputs", "steps", "runner", "job", "strategy", "matrix"]);
 const KNOWN_FUNCTIONS = new Set([
   "contains", "startswith", "endswith", "format", "join", "tojson", "fromjson", "hashfiles",
@@ -123,12 +124,12 @@ export function lintSource(source: string, file: string, options: LintOptions = 
         report("AC006", "error", "the \"secrets\" context is not available in composite actions; pass the secret in as an input", off);
         continue;
       }
-      // UNVERIFIED rule: see the note above ALLOWED_CONTEXTS. Behaviour kept until the runner probe result exists.
+      // Confirmed by run 46002009819 for run: expressions (see evidence/probe.log).
       if (rootName === "needs") {
         report("AC006", "error", "the \"needs\" context is not available in composite actions; pass the value in as an input", off);
         continue;
       }
-      // UNVERIFIED rule: see the note above ALLOWED_CONTEXTS. Behaviour kept until the runner probe result exists.
+      // Confirmed by run 46002009819 for run: expressions (see evidence/probe.log).
       if (rootName === "vars") {
         report("AC006", "error", "the \"vars\" context is not available in composite actions; pass the value in as an input", off);
         continue;

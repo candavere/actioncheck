@@ -137,8 +137,8 @@
 ### Task 1: needs / vars in composite steps
 - Scratch repo plan written outside this repo (probe-repo/: 5 composite actions + .github/workflows/probe.yml + RUN-ME.md). Probes: needs.x.result, vars.X, matrix.os, a step's own earlier outputs (steps.first.outputs.value, also as the action output), each in its own action with continue-on-error, plus one action with all four, plus a workflow-step control.
 - Static check of the probe files: actionlint 1.7.12 on probe.yml exit 0; jactionlint 2.6.0 (--profile correctness) on workflow + 5 actions exit 0, no findings; actioncheck on the 5 actions: 4 AC006 errors (needs x2, vars x2), matrix and steps clean.
-- Runner result: NOT YET RUN (owner to run RUN-ME.md and paste output). Until then needs and vars rules are labelled UNVERIFIED in src/lint.ts comments and README. Behaviour unchanged (same errors, same messages, same fixtures).
-- Note: commit cb3f83e says "runner rejects it in composite actions" for vars; no runner log for that is in this repo, so it stays UNVERIFIED.
+- Runner result: run 46002009819 on 2026-11-27 confirmed `Unrecognized named-value: 'needs'` and `Unrecognized named-value: 'vars'` in composite `run:` expressions; summary `needs=failure vars=failure matrix=success steps=success all=failure`. Evidence in evidence/probe.log, evidence/probe-repo/ and evidence/README.md. Scope: `run:` expressions only. Behaviour unchanged (same errors, same messages, same fixtures).
+- Note: commit cb3f83e's vars claim is now backed by that runner log; labels removed from src/lint.ts and README.
 - Tests after task 1 (Node 22.23.5): 46 / 46 pass, 0 fail.
 
 ### Task 2: unused-input warning flag
@@ -159,5 +159,5 @@
 - Reran jactionlint 2.6.0 with no flags, with shellcheck 0.11.0 (pip shellcheck-py) and pyflakes on PATH: 164 findings = the earlier 58 (identical) + 106 shellcheck (all in run: scripts). The online checks are disabled by default (report status "disabled"). `--online`: 55 lookups skipped by the rate limit (no token), so that run is incomplete.
 - Hand labels downgraded to a rough reading (40/57 UNCLEAR; the FALSE labels come from reading the source, no workflows were run).
 - Usage: billing_status gives only whole percents (41 before and after), so per-task spend can't be measured. Dropped from the reports.
-- needs/vars: still UNVERIFIED. The probe repo is not yet run (needs the owner's GitHub; Hark has no credential).
+- needs/vars: verified by run 46002009819 (see evidence/README.md); run:-only scope, labels removed.
 - Tests (Node 22.23.5): 53 / 53 pass.

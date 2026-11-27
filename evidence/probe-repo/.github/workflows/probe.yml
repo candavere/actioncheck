@@ -1,0 +1,46 @@
+name: probe
+on:
+  workflow_dispatch:
+  push:
+permissions:
+  contents: read
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "job x ran"
+  probe:
+    needs: x
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      # Control: the same expressions in a workflow step, where every context is documented as available.
+      - name: control (workflow step)
+        run: |
+          echo "CONTROL needs.x.result=[${{ needs.x.result }}]"
+          echo "CONTROL vars.X=[${{ vars.X }}]"
+          echo "CONTROL matrix.os=[${{ matrix.os }}]"
+      # One action per context, so one failure cannot hide another.
+      - id: p_needs
+        continue-on-error: true
+        uses: ./.github/actions/probe-needs
+      - id: p_vars
+        continue-on-error: true
+        uses: ./.github/actions/probe-vars
+      - id: p_matrix
+        continue-on-error: true
+        uses: ./.github/actions/probe-matrix
+      - id: p_steps
+        continue-on-error: true
+        uses: ./.github/actions/probe-steps
+      - id: p_all
+        continue-on-error: true
+        uses: ./.github/actions/probe-all
+      - name: summary
+        if: always()
+        run: |
+          echo "SUMMARY needs=${{ steps.p_needs.outcome }} vars=${{ steps.p_vars.outcome }} matrix=${{ steps.p_matrix.outcome }} steps=${{ steps.p_steps.outcome }} all=${{ steps.p_all.outcome }}"
+          echo "SUMMARY p_steps.outputs.value=[${{ steps.p_steps.outputs.value }}] p_all.outputs.value=[${{ steps.p_all.outputs.value }}]"

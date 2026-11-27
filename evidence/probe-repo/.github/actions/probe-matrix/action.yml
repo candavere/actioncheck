@@ -1,0 +1,7 @@
+name: probe-matrix
+description: reads the matrix context inside a composite step
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "PROBE matrix.os=[${{ matrix.os }}]"

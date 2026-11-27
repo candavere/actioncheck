@@ -1,0 +1,5 @@
+evidence/probe-repo/.github/actions/probe-all/action.yml:15:45: error: the "needs" context is not available in composite actions; pass the value in as an input [AC006]
+evidence/probe-repo/.github/actions/probe-all/action.yml:16:37: error: the "vars" context is not available in composite actions; pass the value in as an input [AC006]
+evidence/probe-repo/.github/actions/probe-needs/action.yml:7:44: error: the "needs" context is not available in composite actions; pass the value in as an input [AC006]
+evidence/probe-repo/.github/actions/probe-vars/action.yml:7:36: error: the "vars" context is not available in composite actions; pass the value in as an input [AC006]
+actioncheck: 5 composite action(s) checked, 4 error(s), 0 warning(s)

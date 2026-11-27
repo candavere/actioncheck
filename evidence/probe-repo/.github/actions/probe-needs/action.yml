@@ -1,0 +1,7 @@
+name: probe-needs
+description: reads the needs context inside a composite step
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "PROBE needs.x.result=[${{ needs.x.result }}]"

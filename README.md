@@ -11,7 +11,7 @@ actionlint (1.7.12) checks workflows. When a workflow uses a local action, it re
 | AC002 | a `run:` step with no `shell:`, which composite actions require |
 | AC003 | `inputs.foo` used but not declared (error), or declared but never used (warning) |
 | AC004 | `steps.foo` where no step has id `foo`, or the step only runs later; duplicate step ids; outputs pointing at missing steps |
-| AC006 | broken `${{ }}` expressions, unknown functions, typo'd contexts, and `secrets`, which composite actions can't use. Also reports `needs` and `vars` (UNVERIFIED, see below) |
+| AC006 | broken `${{ }}` expressions, unknown functions, typo'd contexts, and `secrets`, `needs` and `vars`, which composite actions can't use in `run:` expressions (see below) |
 | AC007 | `uses:` with no `@ref` or in a malformed shape (error); a ref that isn't a full commit SHA (warning) |
 
 ## Install
@@ -93,9 +93,9 @@ Not checked:
 - `$INPUT_NAME` in scripts. Composite actions don't get those variables, so they are not counted as reads.
 - `required:`, and whether a caller passes the input. That needs the workflow; actionlint and jactionlint check it.
 
-### `needs` and `vars` are UNVERIFIED
+### `needs` and `vars` in `run:` expressions
 
-GitHub's docs say the `secrets` context is not available in composite actions. They say nothing either way about `needs` or `vars`, and jactionlint treats both as available. actioncheck reports both as errors, but that claim is UNVERIFIED until a run on GitHub's own runner confirms it. If your action uses them on purpose, treat those two AC006 errors as unconfirmed.
+GitHub's own runner rejects `needs.x.result` and `vars.X` inside a composite action's `run:` expression: run `46002009819` logged `Unrecognized named-value: 'needs'` and `Unrecognized named-value: 'vars'`, and its summary step printed `SUMMARY needs=failure vars=failure matrix=success steps=success all=failure`. The same expressions in a workflow step printed `CONTROL vars.X=[probe-value]` and `CONTROL needs.x.result=[success]`, so those contexts exist in workflows but not in composite action steps. Evidence: `evidence/probe.log`, `evidence/probe-repo/` and `evidence/README.md`. This confirms actioncheck's AC006 errors for these contexts in `run:` expressions only; `if:`, `env:`, `with:` and other step fields were not probed.
 
 ## What it does not do
 

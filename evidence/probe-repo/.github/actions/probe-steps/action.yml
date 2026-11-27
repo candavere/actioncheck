@@ -1,0 +1,14 @@
+name: probe-steps
+description: one step reads an earlier step's outputs, and the action output reads it too
+outputs:
+  value:
+    description: copied from step "first"
+    value: ${{ steps.first.outputs.value }}
+runs:
+  using: composite
+  steps:
+    - id: first
+      shell: bash
+      run: echo "value=from-first" >> "$GITHUB_OUTPUT"
+    - shell: bash
+      run: echo "PROBE steps.first.outputs.value=[${{ steps.first.outputs.value }}]"

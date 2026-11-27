@@ -1,0 +1,18 @@
+name: probe-all
+description: all four contexts in one composite action (the case in the task)
+outputs:
+  value:
+    description: copied from step "first"
+    value: ${{ steps.first.outputs.value }}
+runs:
+  using: composite
+  steps:
+    - id: first
+      shell: bash
+      run: echo "value=from-first" >> "$GITHUB_OUTPUT"
+    - shell: bash
+      run: |
+        echo "PROBE-ALL needs.x.result=[${{ needs.x.result }}]"
+        echo "PROBE-ALL vars.X=[${{ vars.X }}]"
+        echo "PROBE-ALL matrix.os=[${{ matrix.os }}]"
+        echo "PROBE-ALL steps.first.outputs.value=[${{ steps.first.outputs.value }}]"
