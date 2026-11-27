@@ -1,0 +1,59 @@
+id	rule	location	label	reason
+J1	github-env	actions-rust-lang__setup-rust-toolchain:147:48	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J2	github-env	actions-rust-lang__setup-rust-toolchain:150:66	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J3	unverified-download	actions-rust-lang__setup-rust-toolchain:171:11	TRUE	curl https://sh.rustup.rs | sh with no checksum: the script is run unverified, as stated
+J4	github-env	codecov__codecov-action:284:39	FALSE	value is github.event.pull_request.head.label ('owner:branch'); git ref names cannot contain newlines (check-ref-format forbids control characters), so the claimed extra-variable injection cannot happen
+J5	github-env	codecov__codecov-action:287:37	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J6	github-env	codecov__codecov-action:306:31	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J7	github-env	codecov__codecov-action:307:29	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J8	template-injection	coverallsapp__github-action:103:16	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J9	template-injection	coverallsapp__github-action:110:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J10	template-injection	coverallsapp__github-action:121:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J11	template-injection	coverallsapp__github-action:133:16	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J12	template-injection	coverallsapp__github-action:196:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J13	template-injection	coverallsapp__github-action:208:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J14	template-injection	coverallsapp__github-action:220:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J15	template-injection	coverallsapp__github-action:229:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J16	template-injection	coverallsapp__github-action:250:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J17	template-injection	coverallsapp__github-action:267:20	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J18	template-injection	coverallsapp__github-action:276:20	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J19	template-injection	coverallsapp__github-action:285:20	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J20	template-injection	coverallsapp__github-action:302:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J21	template-injection	coverallsapp__github-action:305:182	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J22	template-injection	coverallsapp__github-action:323:20	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J23	template-injection	coverallsapp__github-action:328:182	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J24	template-injection	coverallsapp__github-action:346:18	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J25	template-injection	coverallsapp__github-action:349:299	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J26	template-injection	coverallsapp__github-action:349:382	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J27	template-injection	coverallsapp__github-action:349:456	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J28	template-injection	coverallsapp__github-action:349:484	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J29	template-injection	coverallsapp__github-action:349:526	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J30	template-injection	coverallsapp__github-action:370:20	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J31	template-injection	coverallsapp__github-action:375:299	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J32	template-injection	coverallsapp__github-action:375:382	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J33	template-injection	coverallsapp__github-action:375:456	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J34	template-injection	coverallsapp__github-action:375:484	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J35	template-injection	coverallsapp__github-action:375:526	UNCLEAR	input from the caller expanded inside run:; true pattern, but the caller (workflow author) chooses it, so risk depends on the caller
+J36	unverified-download	dtolnay__rust-toolchain:66:11	TRUE	curl https://sh.rustup.rs | sh with no checksum: the script is run unverified, as stated
+J37	unpinned-uses	getsentry__action-release:193:13	TRUE	docker://ghcr.io/getsentry/action-release-image:master is a moving tag, not a digest (actioncheck AC007 does not check docker pinning by design)
+J38	adhoc-packages	getsentry__action-release:228:12	TRUE	npm install --no-package-lock @sentry/cli@^2.58.6 resolves a range at run time, as stated
+J39	github-env	helm__chart-testing-action:75:42	FALSE	lines 62 and 71 reject line breaks in LINT_CONFIG and its realpath before writing to $GITHUB_ENV
+J40	unpinned-uses	pre-commit__action:15:11	MATCH	same finding as actioncheck AC007 warning (actions/cache@v4 not SHA-pinned)
+J41	template-injection	pre-commit__action:19:67	UNCLEAR	extra_args is documented as extra arguments to pre-commit; expanding it in run: is the intended use, risk depends on the caller
+J42	obfuscation	raven-actions__actionlint:19:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J43	expression-type	raven-actions__actionlint:23:14	UNCLEAR	${{ null }} in a default: type warning is accurate, but the runner renders null as an empty string, so no runtime effect is expected
+J44	obfuscation	raven-actions__actionlint:23:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J45	expression-type	raven-actions__actionlint:27:14	UNCLEAR	${{ null }} in a default: type warning is accurate, but the runner renders null as an empty string, so no runtime effect is expected
+J46	obfuscation	raven-actions__actionlint:27:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J47	obfuscation	raven-actions__actionlint:31:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J48	obfuscation	raven-actions__actionlint:35:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J49	obfuscation	raven-actions__actionlint:39:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J50	obfuscation	raven-actions__actionlint:43:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J51	obfuscation	raven-actions__actionlint:47:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J52	obfuscation	raven-actions__actionlint:51:18	TRUE	${{ true }}/${{ false }}/${{ null }} in inputs.*.default is a constant expression (style). actioncheck does not lint defaults by design
+J53	context-availability	raven-actions__actionlint:243:19	UNCLEAR	expression with runner.os in a step's shell:. Docs neither allow nor forbid expressions in runs.steps[*].shell; whether the runner evaluates it is not verified here
+J54	github-env	sigstore__cosign-installer:291:47	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J55	github-env	withastro__action:58:51	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J56	github-env	withastro__action:92:33	UNCLEAR	input from the calling workflow written to $GITHUB_ENV/$GITHUB_PATH; exploitable only if the caller passes attacker-controlled text, which this file cannot show
+J57	template-injection	withastro__action:160:16	FALSE	build-cmd is a command the caller asks the action to run; executing it is the input's purpose, not injection
+J58	template-injection	withastro__action:166:16	FALSE	build-cmd is a command the caller asks the action to run; executing it is the input's purpose, not injection

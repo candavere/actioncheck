@@ -148,3 +148,9 @@
 - README: usage line + "Inputs (AC003): what is checked" table and "Not checked" list.
 - Fixture line numbers in two tests were off by one on first run (2 fails, test expectation typo, not tool behaviour); corrected.
 - Tests after task 2 (Node 22.23.5): 53 / 53 pass, 0 fail.
+
+### Task 3: side-by-side corpus run
+- jactionlint 2.6.0 (latest on PyPI and in GitHub releases.atom on 2026-11-27; `pip install jactionlint==2.6.0` in a venv, linux/arm64 wheel). Commands and outputs in corpus/compare/ (README.md, raw JSON, actioncheck text + SARIF, diff-context.txt, labels.tsv).
+- actioncheck: 0 errors, 1 warning (AC007, pre-commit actions/cache@v4). jactionlint default: 58 findings (template-injection 31, github-env 10, obfuscation 9, unverified-download 2, unpinned-uses 2, expression-type 2, adhoc-packages 1, context-availability 1). Correctness profile: 3.
+- Overlap 1; differing 57 (all jactionlint-only). Hand labels: TRUE 13, FALSE 4, UNCLEAR 40. No TRUE finding falls inside AC002–AC007's documented scope. No rule changed.
+- Tests after task 3 (Node 22.23.5): 53 / 53 pass, 0 fail. Usage: pool 41% at start of tasks 1–3, 41% after (under 1 point).

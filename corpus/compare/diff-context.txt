@@ -1,0 +1,233 @@
+dict_keys(['message', 'filepath', 'line', 'column', 'kind', 'snippet', 'end_column', 'id', 'severity', 'doc_url', 'end_line'])
+--- J1 [github-env] actions-rust-lang__setup-rust-toolchain:147:48  untrusted input from the variable _srt_NEW_RUSTFLAGS (inputs.rustflags) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another variable) and run code in the next st
+    146|         if [[ ( ! -v RUSTFLAGS ) && $_srt_NEW_RUSTFLAGS != "" ]]; then
+    147|           echo "RUSTFLAGS=$_srt_NEW_RUSTFLAGS" >> $GITHUB_ENV
+    148|         fi
+--- J2 [github-env] actions-rust-lang__setup-rust-toolchain:150:66  untrusted input from the variable _srt_CARGO_BUILD_WARNINGS (inputs.build-warnings) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another variable) and run code in
+    149|         if [[ ( ! -v CARGO_BUILD_WARNINGS ) && $_srt_CARGO_BUILD_WARNINGS != "" ]]; then
+    150|           echo "CARGO_BUILD_WARNINGS=$_srt_CARGO_BUILD_WARNINGS" >> $GITHUB_ENV
+    151|         fi
+--- J3 [unverified-download] actions-rust-lang__setup-rust-toolchain:171:11  the script downloaded from "https://sh.rustup.rs" is run by "sh" without being verified, so whoever controls that server or the connection to it controls this job. if it installs a tool, mise can install it and record its checksum
+    170|         if ! command -v rustup &> /dev/null ; then
+    171|           curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL "https://sh.rustup.rs" | sh -s -- --default-toolchain none -y
+    172| 
+--- J4 [github-env] codecov__codecov-action:284:39  untrusted input from the variable GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL (github.event.pull_request.head.label) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another
+    283|           CC_BRANCH="$GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL"
+    284|           echo "TOKENLESS=$TOKENLESS" >> "$GITHUB_ENV"
+    285|         fi
+--- J5 [github-env] codecov__codecov-action:287:37  untrusted input from the variable GITHUB_EVENT_PULL_REQUEST_HEAD_LABEL (github.event.pull_request.head.label) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another
+    286| 
+    287|         echo "CC_BRANCH=$CC_BRANCH" >> "$GITHUB_ENV"
+    288|       env:
+--- J6 [github-env] codecov__codecov-action:306:31  untrusted input from the variable CC_SHA (inputs.override_commit) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another variable) and run code in the next steps. d
+    305| 
+    306|         echo "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"
+    307|         echo "CC_PR=$CC_PR" >> "$GITHUB_ENV"
+--- J7 [github-env] codecov__codecov-action:307:29  untrusted input from the variable CC_PR (inputs.override_pr) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another variable) and run code in the next steps. do not
+    306|         echo "CC_SHA=$CC_SHA" >> "$GITHUB_ENV"
+    307|         echo "CC_PR=$CC_PR" >> "$GITHUB_ENV"
+    308|       env:
+--- J8 [template-injection] coverallsapp__github-action:103:16  "inputs.debug" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/
+    102|         # Enable debugging if 'debug' is true
+    103|         [ "${{ inputs.debug }}" == "true" ] && set -x
+    104| 
+--- J9 [template-injection] coverallsapp__github-action:110:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    109|           echo "Failed to install coveralls via Homebrew (macOS)."
+    110|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    111|           exit 1
+--- J10 [template-injection] coverallsapp__github-action:121:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    120|           echo "Coveralls binary not found after installation (macOS)."
+    121|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    122|           exit 1
+--- J11 [template-injection] coverallsapp__github-action:133:16  "inputs.debug" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/
+    132|         # Enable debugging if 'debug' is true
+    133|         [ "${{ inputs.debug }}" == "true" ] && set -x
+    134| 
+--- J12 [template-injection] coverallsapp__github-action:196:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    195|           echo "Failed to download coveralls binary or checksum (Linux)."
+    196|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    197|           exit 1
+--- J13 [template-injection] coverallsapp__github-action:208:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    207|           echo "Failed to extract checksum for ${platform_filename}"
+    208|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    209|           exit 1
+--- J14 [template-injection] coverallsapp__github-action:220:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    219|           echo "Actual: $actual_checksum"
+    220|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    221|           exit 1
+--- J15 [template-injection] coverallsapp__github-action:229:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    228|           echo "Coveralls binary not found after extraction (Linux)."
+    229|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    230|           exit 1
+--- J16 [template-injection] coverallsapp__github-action:250:18  "inputs.debug" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/
+    249|         # Enable debugging if 'debug' is true
+    250|         if ("${{ inputs.debug }}" -eq "true") {
+    251|           Set-PSDebug -Trace 1
+--- J17 [template-injection] coverallsapp__github-action:267:20  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    266|           Write-Host "Failed to download coveralls binary or checksum (Windows)."
+    267|           if ("${{ inputs.fail-on-error }}" -eq "false") {
+    268|             exit 0
+--- J18 [template-injection] coverallsapp__github-action:276:20  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    275|           Write-Host "Checksum verification failed (Windows)."
+    276|           if ("${{ inputs.fail-on-error }}" -eq "false") {
+    277|             exit 0
+--- J19 [template-injection] coverallsapp__github-action:285:20  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    284|           Write-Host "Coveralls binary not found after download and verification (Windows)."
+    285|           if ("${{ inputs.fail-on-error }}" -eq "false") {
+    286|             exit 0
+--- J20 [template-injection] coverallsapp__github-action:302:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    301|           echo "Coveralls binary not found. Skipping done report."
+    302|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    303|           exit 1
+--- J21 [template-injection] coverallsapp__github-action:305:182  "inputs.build-number" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.
+    304|         fi
+    305|         coveralls done ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.build-number && format('--build-nu
+    306|       env:
+--- J22 [template-injection] coverallsapp__github-action:323:20  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    322|           Write-Host "Coveralls binary not found. Skipping done report."
+    323|           if ("${{ inputs.fail-on-error }}" -eq "false") {
+    324|             exit 0
+--- J23 [template-injection] coverallsapp__github-action:328:182  "inputs.build-number" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.
+    327|         }
+    328|         coveralls done ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.build-number && format('--build-nu
+    329|       env:
+--- J24 [template-injection] coverallsapp__github-action:346:18  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    345|           echo "Coveralls binary not found. Skipping coverage report."
+    346|           [ "${{ inputs.fail-on-error }}" == "false" ] && exit 0
+    347|           exit 1
+--- J25 [template-injection] coverallsapp__github-action:349:299  "inputs.base-path" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com
+    348|         fi
+    349|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    350|       env:
+--- J26 [template-injection] coverallsapp__github-action:349:382  "inputs.build-number" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.
+    348|         fi
+    349|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    350|       env:
+--- J27 [template-injection] coverallsapp__github-action:349:456  "inputs.format" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en
+    348|         fi
+    349|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    350|       env:
+--- J28 [template-injection] coverallsapp__github-action:349:484  "inputs.file" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/a
+    348|         fi
+    349|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    350|       env:
+--- J29 [template-injection] coverallsapp__github-action:349:526  "inputs.files" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/
+    348|         fi
+    349|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    350|       env:
+--- J30 [template-injection] coverallsapp__github-action:370:20  "inputs.fail-on-error" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github
+    369|           Write-Host "Coveralls binary not found. Skipping coverage report."
+    370|           if ("${{ inputs.fail-on-error }}" -eq "false") {
+    371|             exit 0
+--- J31 [template-injection] coverallsapp__github-action:375:299  "inputs.base-path" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com
+    374|         }
+    375|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    376|       env:
+--- J32 [template-injection] coverallsapp__github-action:375:382  "inputs.build-number" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.
+    374|         }
+    375|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    376|       env:
+--- J33 [template-injection] coverallsapp__github-action:375:456  "inputs.format" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en
+    374|         }
+    375|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    376|       env:
+--- J34 [template-injection] coverallsapp__github-action:375:484  "inputs.file" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/a
+    374|         }
+    375|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    376|       env:
+--- J35 [template-injection] coverallsapp__github-action:375:526  "inputs.files" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com/en/
+    374|         }
+    375|         coveralls report ${{ inputs.debug == 'true' && '--debug' || '' }} ${{ inputs.measure == 'true' && '--measure' || '' }} ${{ inputs.fail-on-error == 'false' && '--n
+    376|       env:
+--- J36 [unverified-download] dtolnay__rust-toolchain:66:11  the script downloaded from "https://sh.rustup.rs" is run by "sh" without being verified, so whoever controls that server or the connection to it controls this job. if it installs a tool, mise can install it and record its checksum
+     65|         if ! command -v rustup &>/dev/null; then
+     66|           curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused --location --silent --show-error --fail https://sh.rustup.rs | sh -s -- --default-toolchain none 
+     67|           echo "$CARGO_HOME/bin" >> $GITHUB_PATH
+--- J37 [unpinned-uses] getsentry__action-release:193:13  docker image must be pinned to a digest like "docker://{image}@sha256:{digest}" because the "unpinned-uses" rule is enabled: "docker://ghcr.io/getsentry/action-release-image:master"
+    192|         INPUT_DISABLE_SAFE_DIRECTORY: ${{ inputs.disable_safe_directory }}
+    193|       uses: docker://ghcr.io/getsentry/action-release-image:master
+    194| 
+--- J38 [adhoc-packages] getsentry__action-release:228:12  command "npm install" installs a package outside of a lock file: its version and its dependencies are resolved anew on every run. add the package to package.json and commit the package-lock.json and install with `npm ci`
+    227|       shell: bash
+    228|       run: npm install --no-package-lock @sentry/cli@^2.58.6
+    229|       working-directory: ${{ github.action_path }}
+--- J39 [github-env] helm__chart-testing-action:75:42  untrusted input from the variable LINT_CONFIG (inputs.lint_config) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another variable) and run code in the next steps. 
+     74|         fi
+     75|         echo "CT_LINT_CONF=${lint_conf}" >> "${GITHUB_ENV}"
+     76|         echo "Using custom yamllint config: ${LINT_CONFIG}"
+--- J40 [unpinned-uses] pre-commit__action:15:11  action "actions/cache@v4" must be pinned to a full-length commit SHA like "{owner}/{repo}@{sha}" because the "unpinned-uses" rule is enabled
+     14|     shell: bash
+     15|   - uses: actions/cache@v4
+     16|     with:
+--- J41 [template-injection] pre-commit__action:19:67  "inputs.extra_args" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.co
+     18|       key: pre-commit-3|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+     19|   - run: pre-commit run --show-diff-on-failure --color=always ${{ inputs.extra_args }}
+     20|     shell: bash
+--- J42 [obfuscation] raven-actions__actionlint:19:18  the expression is constant so it can be replaced by its value. write the value itself
+     18|     required: false
+     19|     default: ${{ true }}
+     20|   files:
+--- J43 [expression-type] raven-actions__actionlint:23:14  object, array, and null values should not be evaluated in template with ${{ }} but evaluating the value of type null
+     22|     required: false
+     23|     default: ${{ null }}
+     24|   flags:
+--- J44 [obfuscation] raven-actions__actionlint:23:18  the expression is constant so it can be replaced by its value. write the value itself
+     22|     required: false
+     23|     default: ${{ null }}
+     24|   flags:
+--- J45 [expression-type] raven-actions__actionlint:27:14  object, array, and null values should not be evaluated in template with ${{ }} but evaluating the value of type null
+     26|     required: false
+     27|     default: ${{ null }}
+     28|   json:
+--- J46 [obfuscation] raven-actions__actionlint:27:18  the expression is constant so it can be replaced by its value. write the value itself
+     26|     required: false
+     27|     default: ${{ null }}
+     28|   json:
+--- J47 [obfuscation] raven-actions__actionlint:31:18  the expression is constant so it can be replaced by its value. write the value itself
+     30|     required: false
+     31|     default: ${{ false }}
+     32|   shellcheck:
+--- J48 [obfuscation] raven-actions__actionlint:35:18  the expression is constant so it can be replaced by its value. write the value itself
+     34|     required: false
+     35|     default: ${{ true }}
+     36|   pyflakes:
+--- J49 [obfuscation] raven-actions__actionlint:39:18  the expression is constant so it can be replaced by its value. write the value itself
+     38|     required: false
+     39|     default: ${{ true }}
+     40|   fail-on-error:
+--- J50 [obfuscation] raven-actions__actionlint:43:18  the expression is constant so it can be replaced by its value. write the value itself
+     42|     required: false
+     43|     default: ${{ true }}
+     44|   group-result:
+--- J51 [obfuscation] raven-actions__actionlint:47:18  the expression is constant so it can be replaced by its value. write the value itself
+     46|     required: false
+     47|     default: ${{ true }}
+     48|   cache:
+--- J52 [obfuscation] raven-actions__actionlint:51:18  the expression is constant so it can be replaced by its value. write the value itself
+     50|     required: false
+     51|     default: ${{ true }}
+     52|   working-directory:
+--- J53 [context-availability] raven-actions__actionlint:243:19  context "runner" is not allowed here. no context is available here. see https://docs.github.com/en/actions/learn-github-actions/contexts#context-availability for more details
+    242|       run: npm install --prefix "${{ runner.temp }}/actionlint-action" --no-save --no-package-lock --no-audit --no-fund --ignore-scripts --legacy-peer-deps @actions/tool-
+    243|       shell: ${{ (runner.os == 'Windows' && 'pwsh') || 'bash' }}
+    244|       working-directory: ${{ inputs.working-directory }}
+--- J54 [github-env] sigstore__cosign-installer:291:47  untrusted input from the variable input_install_dir (inputs.install-dir) is written to $GITHUB_PATH. an attacker who controls the directory can shadow executables such as ssh and run code in the next steps. do not write input that
+    290|         input_install_dir: ${{ inputs.install-dir }}
+    291|       run: envsubst <<<"${input_install_dir}" >> "$GITHUB_PATH"
+    292| 
+--- J55 [github-env] withastro__action:58:51  untrusted input from the variable INPUT_PM (inputs.package-manager) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another variable) and run code in the next steps.
+     57|           fi
+     58|           echo "PACKAGE_MANAGER=$PACKAGE_MANAGER" >> $GITHUB_ENV
+     59|         elif [ $(find "." -maxdepth 1 -name "pnpm-lock.yaml") ]; then
+--- J56 [github-env] withastro__action:92:33  untrusted input from the variable INPUT_PM (inputs.package-manager) is written to $GITHUB_ENV. an attacker who controls the value can set LD_PRELOAD or NODE_OPTIONS (a newline adds another variable) and run code in the next steps.
+     91|         fi
+     92|         echo "VERSION=$VERSION" >> $GITHUB_ENV
+     93|     - name: Setup PNPM
+--- J57 [template-injection] withastro__action:160:16  "inputs.build-cmd" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com
+    159|       working-directory: ${{ inputs.path }}
+    160|       run: ${{ inputs.build-cmd || '$PACKAGE_MANAGER run build' }}
+    161| 
+--- J58 [template-injection] withastro__action:166:16  "inputs.build-cmd" is an input chosen by whoever runs this, which is not validated and can hold shell syntax. avoid using it directly in inline scripts. instead, pass it through an environment variable. see https://docs.github.com
+    165|       working-directory: ${{ inputs.path }}
+    166|       run: ${{ inputs.build-cmd || 'deno task build' }}
+    167| 

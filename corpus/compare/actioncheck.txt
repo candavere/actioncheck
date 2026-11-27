@@ -1,0 +1,1 @@
+corpus/actions/pre-commit__action/action.yml:15:11: warning: "uses: actions/cache@v4" is not pinned to a full commit SHA [AC007]
