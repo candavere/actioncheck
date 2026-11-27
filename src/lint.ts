@@ -23,8 +23,12 @@ export const RULES: RuleInfo[] = [
   { id: "AC007", name: "uses-ref", description: "`uses:` must be `owner/repo[/path]@ref`, `./local`, or `docker://image`; refs not pinned to a full commit SHA are warnings." },
 ];
 
-// Contexts usable inside composite action steps. `secrets`, `needs` and `vars` are unavailable:
-// https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#secrets-context
+// Contexts usable inside composite action steps.
+// `secrets`: VERIFIED unavailable. The docs say "The secrets context is not available for composite actions":
+//   https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#secrets-context
+// `needs` and `vars`: UNVERIFIED. The contexts docs do not say either one is unavailable in composite
+//   actions, and jactionlint 2.6.0 treats both as available. The rules below still report them as errors
+//   (behaviour unchanged) until a runner probe (probe-repo/RUN-ME.md) shows what GitHub actually does.
 const ALLOWED_CONTEXTS = new Set(["github", "env", "inputs", "steps", "runner", "job", "strategy", "matrix"]);
 const KNOWN_FUNCTIONS = new Set([
   "contains", "startswith", "endswith", "format", "join", "tojson", "fromjson", "hashfiles",
@@ -113,10 +117,12 @@ export function lintSource(source: string, file: string): LintResult {
         report("AC006", "error", "the \"secrets\" context is not available in composite actions; pass the secret in as an input", off);
         continue;
       }
+      // UNVERIFIED rule: see the note above ALLOWED_CONTEXTS. Behaviour kept until the runner probe result exists.
       if (rootName === "needs") {
         report("AC006", "error", "the \"needs\" context is not available in composite actions; pass the value in as an input", off);
         continue;
       }
+      // UNVERIFIED rule: see the note above ALLOWED_CONTEXTS. Behaviour kept until the runner probe result exists.
       if (rootName === "vars") {
         report("AC006", "error", "the \"vars\" context is not available in composite actions; pass the value in as an input", off);
         continue;

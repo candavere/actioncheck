@@ -130,3 +130,13 @@
 - Node 20.20.2 (via npx node@20): 46/46 tests pass. Node 22.23.5: 46/46.
 - NOT RUN HERE: macOS, Windows, Node 24 (CI matrix in .github/workflows/ci.yml). Workflow action tags actions/checkout@v7 and setup-node@v7 come from releases.atom (v7.0.1 / v7.1.0). Whether the workflow runs green: UNVERIFIED.
 - Usage: pool 39% at start of build, 40% after (about 1 point used for build + step 0).
+
+## 2026-11-27 — tasks 1–3 (working copy: fresh clone of candavere/actioncheck main @ 5b2b9fc)
+- Baseline on Node 22.23.5: `npm ci && npm test` -> 46 tests, 46 pass, 0 fail.
+
+### Task 1: needs / vars in composite steps
+- Scratch repo plan written outside this repo (probe-repo/: 5 composite actions + .github/workflows/probe.yml + RUN-ME.md). Probes: needs.x.result, vars.X, matrix.os, a step's own earlier outputs (steps.first.outputs.value, also as the action output), each in its own action with continue-on-error, plus one action with all four, plus a workflow-step control.
+- Static check of the probe files: actionlint 1.7.12 on probe.yml exit 0; jactionlint 2.6.0 (--profile correctness) on workflow + 5 actions exit 0, no findings; actioncheck on the 5 actions: 4 AC006 errors (needs x2, vars x2), matrix and steps clean.
+- Runner result: NOT YET RUN (owner to run RUN-ME.md and paste output). Until then needs and vars rules are labelled UNVERIFIED in src/lint.ts comments and README. Behaviour unchanged (same errors, same messages, same fixtures).
+- Note: commit cb3f83e says "runner rejects it in composite actions" for vars; no runner log for that is in this repo, so it stays UNVERIFIED.
+- Tests after task 1 (Node 22.23.5): 46 / 46 pass, 0 fail.
