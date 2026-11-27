@@ -60,6 +60,7 @@ npx actioncheck                              # ./action.yml, ./action.yaml and .
 npx actioncheck path/to/action.yml some/dir  # files, or directories searched recursively
 npx actioncheck --format sarif > actioncheck.sarif
 npx actioncheck --format github              # ::error annotations for GitHub Actions logs
+npx actioncheck --no-unused-inputs           # skip the "declared but never used" warnings
 ```
 
 Exit codes: `0` no errors (warnings are allowed), `1` errors found, `2` usage or file error. Non-composite actions (node, docker) are skipped.
@@ -73,6 +74,24 @@ Exit codes: `0` no errors (warnings are allowed), `1` errors found, `2` usage or
     node-version: 22
 - run: npx --yes actioncheck@0.1.0 --format github
 ```
+
+### Inputs (AC003): what is checked
+
+| Case | Result |
+|---|---|
+| Declared under `inputs:` and read as `inputs.name` or `inputs['name']` | OK (names are case-insensitive) |
+| Read but not declared | error at each read |
+| Declared but never read | warning; turn it off with `--no-unused-inputs` |
+| Declared with `deprecationMessage` and never read | not reported (kept on purpose for compatibility) |
+| The whole object is read (`toJSON(inputs)`) or a key is computed (`inputs[matrix.k]`) | no unused-input warnings for that file, since any input could be read |
+
+Reads are found in `${{ }}` expressions in every step key except `uses` and `id` (`run`, `env`, `with`, `if` with or without `${{ }}`, `working-directory`, `name`, and so on) and in `outputs.*.value`.
+
+Not checked:
+
+- `inputs.*.default`. Expressions there are not linted at all, and a read there does not count as a use.
+- `$INPUT_NAME` in scripts. Composite actions don't get those variables, so they are not counted as reads.
+- `required:`, and whether a caller passes the input. That needs the workflow; actionlint and jactionlint check it.
 
 ### `needs` and `vars` are UNVERIFIED
 

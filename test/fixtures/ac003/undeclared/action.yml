@@ -1,0 +1,16 @@
+name: ac003-undeclared
+description: inputs read but never declared (errors)
+inputs:
+  token:
+    description: declared and read
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        T: ${{ inputs.token }}
+        U: ${{ inputs.user }}
+      run: echo "$T $U"
+    - if: inputs.verbose == 'true'
+      shell: bash
+      run: echo verbose

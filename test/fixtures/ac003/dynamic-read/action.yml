@@ -1,0 +1,14 @@
+name: ac003-dynamic-read
+description: reading the whole inputs object (or a computed key) turns off unused-input warnings for the file
+inputs:
+  a:
+    description: never read by name
+  b:
+    description: never read by name
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        ALL: ${{ toJSON(inputs) }}
+      run: echo "$ALL"

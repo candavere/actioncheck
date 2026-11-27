@@ -1,0 +1,13 @@
+name: ac003-default-out-of-scope
+description: expressions in inputs.*.default are not checked (no findings, by design)
+inputs:
+  token:
+    description: the default reads a context and an undeclared input; actioncheck does not look there
+    default: ${{ github.token }} ${{ inputs.not-declared }} ${{ secrets.NOPE }}
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        T: ${{ inputs.token }}
+      run: echo "$T"

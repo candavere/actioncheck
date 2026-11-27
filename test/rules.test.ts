@@ -33,6 +33,23 @@ test("AC003 bad: undeclared and unused inputs", () => {
 });
 test("AC003 good: case-insensitive, bracket access", () => expectDiags("ac003/good", []));
 
+test("AC003 declared and read: run, env, with, bare if, working-directory, action output", () =>
+  expectDiags("ac003/declared-read", []));
+test("AC003 read but undeclared: errors at each read", () => {
+  expectDiags("ac003/undeclared", [["AC003", "error", 12], ["AC003", "error", 14]]);
+});
+test("AC003 declared but never read: warnings, deprecated inputs skipped", () => {
+  expectDiags("ac003/unused", [["AC003", "warning", 6], ["AC003", "warning", 8]]);
+});
+test("AC003 unusedInputs: false silences only the unused-input warnings", () => {
+  const read = (p: string) => readFileSync(fx(p), "utf8");
+  assert.deepEqual(lintSource(read("ac003/unused"), "x", { unusedInputs: false }).diagnostics, []);
+  const bad = lintSource(read("ac003/bad"), "x", { unusedInputs: false }).diagnostics;
+  assert.deepEqual(bad.map((d) => [d.level, d.line]), [["error", 12], ["error", 13]]);
+});
+test("AC003 inputs.*.default is out of scope (not checked)", () => expectDiags("ac003/default-out-of-scope", []));
+test("AC003 reading the whole inputs object turns off unused warnings", () => expectDiags("ac003/dynamic-read", []));
+
 test("AC004 bad: missing, later and duplicate step ids", () => {
   expectDiags("ac004/bad", [["AC004", "error", 6], ["AC004", "error", 12], ["AC004", "error", 13]]);
 });

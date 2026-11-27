@@ -14,6 +14,7 @@ With no paths: ./action.yml, ./action.yaml and everything under .github/actions/
 
 Options:
   -f, --format <text|sarif|github>  output format (default: text)
+      --no-unused-inputs            do not warn about declared inputs that are never read
   -h, --help                        show this help
   -v, --version                     show version
 
@@ -43,6 +44,7 @@ function main(argv: string[]): number {
       args: argv, allowPositionals: true, strict: true,
       options: {
         format: { type: "string", short: "f", default: "text" },
+        "no-unused-inputs": { type: "boolean" },
         help: { type: "boolean", short: "h" },
         version: { type: "boolean", short: "v" },
       },
@@ -78,7 +80,7 @@ function main(argv: string[]): number {
   let skipped = 0;
   for (const f of [...new Set(files)].sort()) {
     const rel = path.relative(process.cwd(), f).split(path.sep).join("/") || f;
-    const r = lintSource(readFileSync(f, "utf8"), rel);
+    const r = lintSource(readFileSync(f, "utf8"), rel, { unusedInputs: !args.values["no-unused-inputs"] });
     if (r.skipped) skipped++;
     diags.push(...r.diagnostics);
   }

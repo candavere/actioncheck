@@ -1,0 +1,19 @@
+name: ac003-unused
+description: declared inputs that are never read (warnings; silenced by --no-unused-inputs)
+inputs:
+  used:
+    description: read below
+  never-read:
+    description: warning
+  also-never-read:
+    description: warning
+  legacy:
+    description: deprecated inputs are skipped
+    deprecationMessage: kept for compatibility
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        U: ${{ inputs.used }}
+      run: echo "$U"

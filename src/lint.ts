@@ -37,7 +37,13 @@ const KNOWN_FUNCTIONS = new Set([
 const SHA_RE = /^[0-9a-f]{40}$/;
 const REMOTE_USES_RE = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+(\/[^@\s]+)?@[^@\s]+$/;
 
-export function lintSource(source: string, file: string): LintResult {
+export interface LintOptions {
+  /** Report declared inputs that are never read (AC003 warning). Default: true. */
+  unusedInputs?: boolean;
+}
+
+export function lintSource(source: string, file: string, options: LintOptions = {}): LintResult {
+  const unusedInputs = options.unusedInputs ?? true;
   const lc = new LineCounter();
   const diagnostics: Diagnostic[] = [];
   const at = (offset: number) => { const p = lc.linePos(Math.max(0, offset)); return { line: p.line, column: p.col }; };
@@ -196,7 +202,7 @@ export function lintSource(source: string, file: string): LintResult {
     if (!SHA_RE.test(ref)) report("AC007", "warning", `"uses: ${v}" is not pinned to a full commit SHA`, off);
   }
 
-  if (!wholeInputsUsed) for (const [key, p] of declared) {
+  if (unusedInputs && !wholeInputsUsed) for (const [key, p] of declared) {
     // Deprecated inputs are often kept on purpose for backwards compatibility.
     if (isMap(p.value) && getPair(p.value, "deprecationmessage")) continue;
     if (!usedInputs.has(key)) report("AC003", "warning", `input "${String((p.key as Scalar).value)}" is declared but never used in this action`, (p.key as Node).range?.[0] ?? 0);

@@ -140,3 +140,11 @@
 - Runner result: NOT YET RUN (owner to run RUN-ME.md and paste output). Until then needs and vars rules are labelled UNVERIFIED in src/lint.ts comments and README. Behaviour unchanged (same errors, same messages, same fixtures).
 - Note: commit cb3f83e says "runner rejects it in composite actions" for vars; no runner log for that is in this repo, so it stays UNVERIFIED.
 - Tests after task 1 (Node 22.23.5): 46 / 46 pass, 0 fail.
+
+### Task 2: unused-input warning flag
+- New CLI flag `--no-unused-inputs` (default: check on, warning level). `lintSource(source, file, { unusedInputs })` option; default true. Errors for undeclared inputs are unaffected by the flag.
+- New fixtures under test/fixtures/ac003/: declared-read (no findings), undeclared (2 errors), unused (2 warnings, deprecated input skipped), default-out-of-scope (no findings; `${{ secrets.NOPE }}` and an undeclared input inside a default are ignored by design), dynamic-read (toJSON(inputs) suppresses unused warnings).
+- Tests: 6 new rule tests + 1 CLI test.
+- README: usage line + "Inputs (AC003): what is checked" table and "Not checked" list.
+- Fixture line numbers in two tests were off by one on first run (2 fails, test expectation typo, not tool behaviour); corrected.
+- Tests after task 2 (Node 22.23.5): 53 / 53 pass, 0 fail.

@@ -1,0 +1,36 @@
+name: ac003-declared-read
+description: every declared input is read somewhere actioncheck looks (no findings)
+inputs:
+  in-run:
+    description: read in run
+  in-env:
+    description: read in env
+  in-with:
+    description: read in with
+  in-if:
+    description: read in a bare if
+  in-output:
+    description: read only in an action output value
+  in-workdir:
+    description: read in working-directory
+outputs:
+  out:
+    description: o
+    value: ${{ inputs.in-output }}
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: echo "${{ inputs.in-run }}"
+    - shell: bash
+      env:
+        V: ${{ inputs.in-env }}
+      run: echo "$V"
+    - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+      with:
+        key: ${{ inputs.in-with }}
+        path: x
+    - if: inputs.in-if == 'true'
+      shell: bash
+      working-directory: ${{ inputs.in-workdir }}
+      run: echo ok

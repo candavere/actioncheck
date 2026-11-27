@@ -42,3 +42,15 @@ test("--version and --help", () => {
   assert.match(run(["--version"]).stdout, /^\d+\.\d+\.\d+/);
   assert.match(run(["--help"]).stdout, /Usage: actioncheck/);
 });
+test("--no-unused-inputs drops the AC003 warnings, keeps the errors", () => {
+  const on = run(["test/fixtures/ac003/bad"]);
+  assert.match(on.stdout, /warning: input "unused-one" is declared but never used/);
+  const off = run(["--no-unused-inputs", "test/fixtures/ac003/bad"]);
+  assert.doesNotMatch(off.stdout, /never used/);
+  assert.match(off.stdout, /error: input "tokn"/);
+  assert.equal(off.status, 1);
+  const w = run(["--no-unused-inputs", "test/fixtures/ac003/unused"]);
+  assert.equal(w.status, 0);
+  assert.equal(w.stdout, "");
+  assert.match(run(["--help"]).stdout, /--no-unused-inputs/);
+});
