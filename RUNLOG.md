@@ -154,3 +154,10 @@
 - actioncheck: 0 errors, 1 warning (AC007, pre-commit actions/cache@v4). jactionlint default: 58 findings (template-injection 31, github-env 10, obfuscation 9, unverified-download 2, unpinned-uses 2, expression-type 2, adhoc-packages 1, context-availability 1). Correctness profile: 3.
 - Overlap 1; differing 57 (all jactionlint-only). Hand labels: TRUE 13, FALSE 4, UNCLEAR 40. No TRUE finding falls inside AC002–AC007's documented scope. No rule changed.
 - Tests after task 3 (Node 22.23.5): 53 / 53 pass, 0 fail. Usage: pool 41% at start of tasks 1–3, 41% after (under 1 point).
+
+### Follow-up (2026-11-27 14:30 IST): owner review
+- Reran jactionlint 2.6.0 with no flags, with shellcheck 0.11.0 (pip shellcheck-py) and pyflakes on PATH: 164 findings = the earlier 58 (identical) + 106 shellcheck (all in run: scripts). The online checks are disabled by default (report status "disabled"). `--online`: 55 lookups skipped by the rate limit (no token), so that run is incomplete.
+- Hand labels downgraded to a rough reading (40/57 UNCLEAR; the FALSE labels come from reading the source, no workflows were run).
+- Usage: billing_status gives only whole percents (41 before and after), so per-task spend can't be measured. Dropped from the reports.
+- needs/vars: still UNVERIFIED. The probe repo is not yet run (needs the owner's GitHub; Hark has no credential).
+- Tests (Node 22.23.5): 53 / 53 pass.

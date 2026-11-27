@@ -1,0 +1,2 @@
+warning: no token found (GITHUB_TOKEN, GH_TOKEN, --online-token-file or gh auth login) so the online checks use unauthenticated requests, which GitHub limits to 60 per hour. set a token to raise the limit
+warning: online: GitHub API rate limit exceeded (resets at 09:29:54, in 33m55s). set GITHUB_TOKEN (or GH_TOKEN) to raise the limit. the lookups which need GitHub are skipped until then, so some findings may be missing. --verbose lists every skipped lookup.

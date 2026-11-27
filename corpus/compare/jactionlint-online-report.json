@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "status": "incomplete",
+  "mode": "online",
+  "skippedLookups": 55,
+  "excludedRepositories": 0,
+  "evidence": "network",
+  "skippedBy": {
+    "rate limit": 55
+  },
+  "answers": {
+    "network": 0,
+    "cache": 0,
+    "stale": 0,
+    "cacheTtlSeconds": 3600
+  }
+}
