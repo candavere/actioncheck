@@ -1,0 +1,14 @@
+$ node dist/src/cli.js evidence/probe2/probe-repo/.github/actions
+evidence/probe2/probe-repo/.github/actions/p-needs-env/action.yml:8:16: error: the "needs" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+evidence/probe2/probe-repo/.github/actions/p-needs-with/action.yml:8:16: error: the "needs" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+evidence/probe2/probe-repo/.github/actions/p-needs-workdir/action.yml:7:30: error: the "needs" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+evidence/probe2/probe-repo/.github/actions/p-vars-env/action.yml:8:16: error: the "vars" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+evidence/probe2/probe-repo/.github/actions/p-vars-with/action.yml:8:16: error: the "vars" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+evidence/probe2/probe-repo/.github/actions/p-vars-workdir/action.yml:7:30: error: the "vars" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+actioncheck: 9 composite action(s) checked, 6 error(s), 0 warning(s)
+
+$ node dist/src/cli.js evidence/probe3/probe-repo/.github/actions
+evidence/probe3/probe-repo/.github/actions/p3-bogus-if/action.yml:6:11: error: unknown context "bogus" (composite actions can use: github, env, inputs, steps, runner, job, strategy, matrix) [AC006]
+evidence/probe3/probe-repo/.github/actions/p3-needs-wrapped/action.yml:6:15: error: the "needs" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+evidence/probe3/probe-repo/.github/actions/p3-vars-wrapped/action.yml:6:15: error: the "vars" context is not available in composite actions except in a step's if: written without ${{ }}; pass the value in as an input [AC006]
+actioncheck: 7 composite action(s) checked, 3 error(s), 0 warning(s)
