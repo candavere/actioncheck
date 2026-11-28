@@ -168,3 +168,8 @@
 - Change: AC006 no longer reports needs/vars in a step's bare if:. Wrapped if:, run:, env:, with:, working-directory: and unprobed fields still report. secrets unchanged. New fixtures ac006/needs-vars-if (0 findings) and ac006/needs-vars-fields (4 errors).
 - Patched build on the probe files matches the runner on all 15 cases: probe2 6 errors (if: probes clean); probe3 3 errors (needs-wrapped, vars-wrapped, bogus-if), eq/neg clean.
 - Tests (Node 22.23.5): 55 / 55 pass, 0 fail.
+
+### Release prep (2026-11-28): 0.2.0
+- package.json and package-lock.json version 0.2.0; README workflow pin @0.2.0; README intro corrected (jactionlint 2.6.0 catches undeclared inputs and missing step ids); CHANGELOG.md added.
+- .github/workflows/release.yml: on tag v*, checks the tag matches package.json, runs tests, publishes with --provenance (npm trusted publishing, or the NPM_TOKEN secret). Provenance needs a CI provider; a local npm publish can't attach it.
+- Tests (Node 22.23.5): 55 / 55 pass, 0 fail. Dogfood corpus: 0 errors, 1 warning.

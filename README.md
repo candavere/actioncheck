@@ -4,7 +4,7 @@
 
 Lint the **steps of composite GitHub Actions** (`action.yml`) on their own, with no workflow needed.
 
-actionlint (1.7.12) checks workflows. When a workflow uses a local action, it reads that action's inputs but not its `steps:`. The [kjanat/actionlint](https://github.com/kjanat/actionlint) fork does check composite steps: missing shell, unavailable contexts, duplicate ids and bad refs. Neither one catches `${{ inputs.x }}` for an input the action never declared, or `${{ steps.x.outputs.y }}` for a step id that doesn't exist. actioncheck does, standalone on any action.yml, with one runtime dependency. Use it next to them, not instead of them.
+actionlint (1.7.12) checks workflows. When a workflow uses a local action, it reads that action's inputs but not its `steps:`. The [kjanat/actionlint](https://github.com/kjanat/actionlint) fork and [jactionlint](https://github.com/jdx/jactionlint) check composite steps too, and jactionlint (2.6.0) also catches `${{ inputs.x }}` for an undeclared input and `${{ steps.x.outputs.y }}` for a missing step id. What actioncheck adds: a warning for inputs declared but never read, and errors for `needs` and `vars` where GitHub's runner rejects them in composite actions (jactionlint 2.6.0 treats both as available; see below). It runs standalone on any action.yml through `npx`, with one runtime dependency. Use it next to them, not instead of them.
 
 | Rule | Catches |
 |---|---|
@@ -72,7 +72,7 @@ Exit codes: `0` no errors (warnings are allowed), `1` errors found, `2` usage or
 - uses: actions/setup-node@v7
   with:
     node-version: 22
-- run: npx --yes actioncheck@0.1.0 --format github
+- run: npx --yes actioncheck@0.2.0 --format github
 ```
 
 ### Inputs (AC003): what is checked

@@ -1,6 +1,6 @@
 {
   "name": "actioncheck",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Lint the steps of composite GitHub Actions (action.yml) without a workflow: missing shell, undeclared inputs, bad step ids, unavailable contexts, malformed uses.",
   "repository": {
     "type": "git",
