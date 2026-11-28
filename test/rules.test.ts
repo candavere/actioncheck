@@ -68,6 +68,10 @@ test("AC006 bad: secrets, needs, vars, typo context, syntax, unknown function", 
   assert.match(msgs, /contans/);
 });
 test("AC006 good: functions, filters, strings containing }}", () => expectDiags("ac006/good", []));
+test("AC006 needs and vars are allowed in a bare step if:", () => expectDiags("ac006/needs-vars-if", []));
+test("AC006 needs and vars are errors in env:, with:, working-directory: and a wrapped if:", () => {
+  expectDiags("ac006/needs-vars-fields", [["AC006", "error", 8], ["AC006", "error", 9], ["AC006", "error", 13], ["AC006", "error", 14]]);
+});
 
 test("AC007 bad: malformed and unpinned uses", () => {
   expectDiags("ac007/bad", [["AC007", "error", 6], ["AC007", "warning", 7], ["AC007", "error", 8], ["AC007", "warning", 9]]);

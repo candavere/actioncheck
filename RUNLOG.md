@@ -161,3 +161,10 @@
 - Usage: billing_status gives only whole percents (41 before and after), so per-task spend can't be measured. Dropped from the reports.
 - needs/vars: verified by run 46002009819 (see evidence/README.md); run:-only scope, labels removed.
 - Tests (Node 22.23.5): 53 / 53 pass.
+
+### Follow-up (2026-11-28): needs/vars scope by field
+- Run 46146446155 (probe2): needs/vars rejected in composite env:, with:, working-directory:; a bare if: ran. Evidence in evidence/probe2/.
+- Run 46147369823 (probe3): bare if: compares real values (== 'success' / == 'probe-value' ran, == 'nope' skipped); the same if: wrapped in ${{ }} fails with Unrecognized named-value; bogus.x in a bare if: fails. Evidence in evidence/probe3/.
+- Change: AC006 no longer reports needs/vars in a step's bare if:. Wrapped if:, run:, env:, with:, working-directory: and unprobed fields still report. secrets unchanged. New fixtures ac006/needs-vars-if (0 findings) and ac006/needs-vars-fields (4 errors).
+- Patched build on the probe files matches the runner on all 15 cases: probe2 6 errors (if: probes clean); probe3 3 errors (needs-wrapped, vars-wrapped, bogus-if), eq/neg clean.
+- Tests (Node 22.23.5): 55 / 55 pass, 0 fail.

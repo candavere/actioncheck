@@ -1,0 +1,16 @@
+name: ac006-needs-vars-fields
+description: needs and vars are rejected in env, with, working-directory and a wrapped if (runs 46146446155 and 46147369823)
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        N: ${{ needs.x.result }}
+      working-directory: ${{ vars.X }}
+      run: echo hi
+    - uses: ./local
+      with:
+        v: ${{ vars.X }}
+    - if: ${{ needs.x.result == 'success' }}
+      shell: bash
+      run: echo wrapped

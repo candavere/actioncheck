@@ -1,0 +1,11 @@
+name: ac006-needs-vars-if
+description: needs and vars are accepted in a bare step if (runs 46146446155 and 46147369823)
+runs:
+  using: composite
+  steps:
+    - if: needs.x.result == 'success'
+      shell: bash
+      run: echo bare-needs
+    - if: vars.X != ''
+      shell: bash
+      run: echo bare-vars

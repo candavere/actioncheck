@@ -29,7 +29,10 @@ export const RULES: RuleInfo[] = [
 // `needs` and `vars`: unavailable in `run:` expressions. Verified on GitHub's runner in run 46002009819:
 //   "Unrecognized named-value: 'needs'" and "Unrecognized named-value: 'vars'", summary
 //   "needs=failure vars=failure matrix=success steps=success all=failure" (evidence/probe.log).
-//   Scope is run: expressions only; if:/env:/with: were not probed.
+//   Run 46146446155 (evidence/probe2/) also rejects them in env:, with: and working-directory:.
+//   A step's bare if: (no ${{ }}) accepts them and compares real values; the same if: wrapped
+//   in ${{ }} is rejected, and an unknown context in a bare if: is rejected (run 46147369823,
+//   evidence/probe3/). So needs/vars are not reported only in a bare if:.
 const ALLOWED_CONTEXTS = new Set(["github", "env", "inputs", "steps", "runner", "job", "strategy", "matrix"]);
 const KNOWN_FUNCTIONS = new Set([
   "contains", "startswith", "endswith", "format", "join", "tojson", "fromjson", "hashfiles",
@@ -89,14 +92,14 @@ export function lintSource(source: string, file: string, options: LintOptions = 
     const startOffset = node.range?.[0] ?? 0;
     const endOffset = node.range?.[1] ?? startOffset;
     const ex = extractExpressions(value);
-    const pieces: { inner: string; srcOffset: number }[] = [];
+    const pieces: { inner: string; srcOffset: number; bareIf: boolean }[] = [];
     let cursor = startOffset;
     for (const e of ex.expressions) {
       const raw = value.slice(e.start, e.end);
       const found = source.indexOf(raw, cursor);
       const srcStart = found >= 0 && found <= endOffset ? found : startOffset;
       if (found >= 0 && found <= endOffset) cursor = found + raw.length;
-      pieces.push({ inner: e.inner, srcOffset: srcStart + 3 });
+      pieces.push({ inner: e.inner, srcOffset: srcStart + 3, bareIf: false });
     }
     for (const err of ex.errors) {
       const raw = value.slice(err.offset, err.offset + 3);
@@ -106,12 +109,12 @@ export function lintSource(source: string, file: string, options: LintOptions = 
     if (bare && ex.expressions.length === 0 && ex.errors.length === 0 && value.trim() !== "") {
       // `if:` without ${{ }} is itself an expression.
       const found = source.indexOf(value, startOffset);
-      pieces.push({ inner: value, srcOffset: found >= 0 && found <= endOffset ? found : startOffset });
+      pieces.push({ inner: value, srcOffset: found >= 0 && found <= endOffset ? found : startOffset, bareIf: true });
     }
-    for (const p of pieces) checkExpression(p.inner, p.srcOffset, stepIndex);
+    for (const p of pieces) checkExpression(p.inner, p.srcOffset, stepIndex, p.bareIf);
   }
 
-  function checkExpression(inner: string, srcOffset: number, stepIndex: number) {
+  function checkExpression(inner: string, srcOffset: number, stepIndex: number, inBareIf: boolean) {
     const r = parseExpression(inner);
     for (const e of r.errors) report("AC006", "error", `invalid expression: ${e.message}`, srcOffset + e.offset);
     for (const c of r.calls) {
@@ -124,14 +127,10 @@ export function lintSource(source: string, file: string, options: LintOptions = 
         report("AC006", "error", "the \"secrets\" context is not available in composite actions; pass the secret in as an input", off);
         continue;
       }
-      // Confirmed by run 46002009819 for run: expressions (see evidence/probe.log).
-      if (rootName === "needs") {
-        report("AC006", "error", "the \"needs\" context is not available in composite actions; pass the value in as an input", off);
-        continue;
-      }
-      // Confirmed by run 46002009819 for run: expressions (see evidence/probe.log).
-      if (rootName === "vars") {
-        report("AC006", "error", "the \"vars\" context is not available in composite actions; pass the value in as an input", off);
+      // needs/vars: rejected in run:, env:, with:, working-directory: and a ${{ }}-wrapped if:;
+      // accepted in a bare if: (runs 46002009819, 46146446155, 46147369823).
+      if (rootName === "needs" || rootName === "vars") {
+        if (!inBareIf) report("AC006", "error", `the "${rootName}" context is not available in composite actions except in a step's if: written without \${{ }}; pass the value in as an input`, off);
         continue;
       }
       if (!ALLOWED_CONTEXTS.has(rootName)) {

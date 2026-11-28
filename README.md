@@ -11,7 +11,7 @@ actionlint (1.7.12) checks workflows. When a workflow uses a local action, it re
 | AC002 | a `run:` step with no `shell:`, which composite actions require |
 | AC003 | `inputs.foo` used but not declared (error), or declared but never used (warning) |
 | AC004 | `steps.foo` where no step has id `foo`, or the step only runs later; duplicate step ids; outputs pointing at missing steps |
-| AC006 | broken `${{ }}` expressions, unknown functions, typo'd contexts, and `secrets`, `needs` and `vars`, which composite actions can't use in `run:` expressions (see below) |
+| AC006 | broken `${{ }}` expressions, unknown functions, typo'd contexts, `secrets` anywhere, and `needs` and `vars` anywhere except a step's bare `if:` (see below) |
 | AC007 | `uses:` with no `@ref` or in a malformed shape (error); a ref that isn't a full commit SHA (warning) |
 
 ## Install
@@ -93,9 +93,15 @@ Not checked:
 - `$INPUT_NAME` in scripts. Composite actions don't get those variables, so they are not counted as reads.
 - `required:`, and whether a caller passes the input. That needs the workflow; actionlint and jactionlint check it.
 
-### `needs` and `vars` in `run:` expressions
+### `needs` and `vars` in composite actions
 
-GitHub's own runner rejects `needs.x.result` and `vars.X` inside a composite action's `run:` expression: run `46002009819` logged `Unrecognized named-value: 'needs'` and `Unrecognized named-value: 'vars'`, and its summary step printed `SUMMARY needs=failure vars=failure matrix=success steps=success all=failure`. The same expressions in a workflow step printed `CONTROL vars.X=[probe-value]` and `CONTROL needs.x.result=[success]`, so those contexts exist in workflows but not in composite action steps. Evidence: `evidence/probe.log`, `evidence/probe-repo/` and `evidence/README.md`. This confirms actioncheck's AC006 errors for these contexts in `run:` expressions only; `if:`, `env:`, `with:` and other step fields were not probed.
+GitHub's own runner rejects `needs` and `vars` in a composite action's `run:`, `env:`, `with:` and `working-directory:` fields, and in a step's `if:` written as `${{ }}`. A step's bare `if:` (no `${{ }}`) accepts them and compares their real values.
+
+- Run `46002009819` logged `Unrecognized named-value: 'needs'` and `Unrecognized named-value: 'vars'` for `run:`, with summary `SUMMARY needs=failure vars=failure matrix=success steps=success all=failure`. The same expressions in a workflow step printed `CONTROL vars.X=[probe-value]` and `CONTROL needs.x.result=[success]`. Evidence: `evidence/probe.log`, `evidence/probe-repo/`, `evidence/README.md`.
+- Run `46146446155` logged the same errors for `env:`, `with:` and `working-directory:`, and ran the bare `if:` steps: `SUMMARY2 needs_if=success needs_env=failure needs_with=failure needs_workdir=failure vars_if=success vars_env=failure vars_with=failure vars_workdir=failure`. Evidence: `evidence/probe2/`.
+- Run `46147369823`: in a bare `if:`, `needs.x.result == 'success'` and `vars.X == 'probe-value'` ran and `== 'nope'` was skipped; the same comparisons wrapped in `${{ }}` failed with `Unrecognized named-value`, and `bogus.x == ''` in a bare `if:` failed with `Unrecognized named-value: 'bogus'`. Summary: `SUMMARY3 needs_eq=success needs_neg=success needs_wrapped=failure vars_eq=success vars_neg=success vars_wrapped=failure bogus_if=failure`. Evidence: `evidence/probe3/`.
+
+So AC006 reports `needs` and `vars` everywhere except a step's bare `if:`. Other step fields (`name:`, `continue-on-error:`, `timeout-minutes:`) and action `outputs` were not probed; actioncheck still reports them there.
 
 ## What it does not do
 
