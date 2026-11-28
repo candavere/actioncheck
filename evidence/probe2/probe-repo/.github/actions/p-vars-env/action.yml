@@ -1,0 +1,9 @@
+name: p-vars-env
+description: vars in a composite step's env field
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        V: ${{ vars.X }}
+      run: echo "PROBE2 vars-env=[$V]"

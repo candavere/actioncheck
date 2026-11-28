@@ -1,0 +1,8 @@
+name: p3-vars-wrapped
+description: vars in wrapped if (expect ran)
+runs:
+  using: composite
+  steps:
+    - if: ${{ vars.X == 'probe-value' }}
+      shell: bash
+      run: echo "PROBE3 p3-vars-wrapped ran"

@@ -1,0 +1,9 @@
+.github/actions/p-needs-env/action.yml:8:16: error: the "needs" context is not available in composite actions; pass the value in as an input [AC006]
+.github/actions/p-needs-if/action.yml:6:11: error: the "needs" context is not available in composite actions; pass the value in as an input [AC006]
+.github/actions/p-needs-with/action.yml:8:16: error: the "needs" context is not available in composite actions; pass the value in as an input [AC006]
+.github/actions/p-needs-workdir/action.yml:7:30: error: the "needs" context is not available in composite actions; pass the value in as an input [AC006]
+.github/actions/p-vars-env/action.yml:8:16: error: the "vars" context is not available in composite actions; pass the value in as an input [AC006]
+.github/actions/p-vars-if/action.yml:6:11: error: the "vars" context is not available in composite actions; pass the value in as an input [AC006]
+.github/actions/p-vars-with/action.yml:8:16: error: the "vars" context is not available in composite actions; pass the value in as an input [AC006]
+.github/actions/p-vars-workdir/action.yml:7:30: error: the "vars" context is not available in composite actions; pass the value in as an input [AC006]
+actioncheck: 9 composite action(s) checked, 8 error(s), 0 warning(s)

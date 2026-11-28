@@ -1,0 +1,45 @@
+name: probe3
+on:
+  workflow_dispatch:
+  push:
+permissions:
+  contents: read
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "job x ran"
+  probe:
+    needs: x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: control (workflow step)
+        env:
+          N: ${{ needs.x.result }}
+          V: ${{ vars.X }}
+        run: echo "CONTROL3 needs=[$N] vars=[$V]"
+      - id: needs_eq
+        continue-on-error: true
+        uses: ./.github/actions/p3-needs-eq
+      - id: needs_neg
+        continue-on-error: true
+        uses: ./.github/actions/p3-needs-neg
+      - id: needs_wrapped
+        continue-on-error: true
+        uses: ./.github/actions/p3-needs-wrapped
+      - id: vars_eq
+        continue-on-error: true
+        uses: ./.github/actions/p3-vars-eq
+      - id: vars_neg
+        continue-on-error: true
+        uses: ./.github/actions/p3-vars-neg
+      - id: vars_wrapped
+        continue-on-error: true
+        uses: ./.github/actions/p3-vars-wrapped
+      - id: bogus_if
+        continue-on-error: true
+        uses: ./.github/actions/p3-bogus-if
+      - name: summary
+        if: always()
+        run: echo "SUMMARY3 needs_eq=${{ steps.needs_eq.outcome }} needs_neg=${{ steps.needs_neg.outcome }} needs_wrapped=${{ steps.needs_wrapped.outcome }} vars_eq=${{ steps.vars_eq.outcome }} vars_neg=${{ steps.vars_neg.outcome }} vars_wrapped=${{ steps.vars_wrapped.outcome }} bogus_if=${{ steps.bogus_if.outcome }}"

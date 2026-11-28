@@ -1,0 +1,8 @@
+name: p-needs-if
+description: needs in a composite step's if field
+runs:
+  using: composite
+  steps:
+    - if: needs.x.result != ''
+      shell: bash
+      run: echo "PROBE2 needs-if ran"

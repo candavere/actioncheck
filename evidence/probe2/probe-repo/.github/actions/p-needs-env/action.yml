@@ -1,0 +1,9 @@
+name: p-needs-env
+description: needs in a composite step's env field
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        V: ${{ needs.x.result }}
+      run: echo "PROBE2 needs-env=[$V]"

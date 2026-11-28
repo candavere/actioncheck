@@ -1,0 +1,12 @@
+name: echo-input
+description: helper that prints its input (used to probe with:)
+inputs:
+  v:
+    description: value to print
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        V: ${{ inputs.v }}
+      run: echo "PROBE2 with-received=[$V]"

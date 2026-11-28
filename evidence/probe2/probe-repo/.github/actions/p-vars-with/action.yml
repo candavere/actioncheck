@@ -1,0 +1,8 @@
+name: p-vars-with
+description: vars in a composite step's with field
+runs:
+  using: composite
+  steps:
+    - uses: ./.github/actions/echo-input
+      with:
+        v: ${{ vars.X }}

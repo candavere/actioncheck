@@ -1,0 +1,8 @@
+name: p3-needs-neg
+description: needs in if, wrong value (expect no ran line)
+runs:
+  using: composite
+  steps:
+    - if: needs.x.result == 'nope'
+      shell: bash
+      run: echo "PROBE3 p3-needs-neg ran"

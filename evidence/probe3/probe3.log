@@ -1,0 +1,250 @@
+x	Set up job	﻿2026-11-28T12:59:52.6306324Z Current runner version: '2.338.2'
+x	Set up job	2026-11-28T12:59:52.6338251Z ##[group]Runner Image Provisioner
+x	Set up job	2026-11-28T12:59:52.6339340Z Hosted Compute Agent
+x	Set up job	2026-11-28T12:59:52.6340455Z Version: 20261111.635
+x	Set up job	2026-11-28T12:59:52.6341264Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+x	Set up job	2026-11-28T12:59:52.6342267Z Build Date: 2026-11-11T01:49:01Z
+x	Set up job	2026-11-28T12:59:52.6343116Z Worker ID: {00b46e8f-fa10-4ffd-8317-1656a4927c3c}
+x	Set up job	2026-11-28T12:59:52.6343977Z Region: westus
+x	Set up job	2026-11-28T12:59:52.6344690Z Cloud: Azure
+x	Set up job	2026-11-28T12:59:52.6345350Z ##[endgroup]
+x	Set up job	2026-11-28T12:59:52.6347111Z ##[group]Operating System
+x	Set up job	2026-11-28T12:59:52.6348146Z Ubuntu
+x	Set up job	2026-11-28T12:59:52.6348794Z 26.04.1
+x	Set up job	2026-11-28T12:59:52.6349499Z LTS
+x	Set up job	2026-11-28T12:59:52.6350319Z ##[endgroup]
+x	Set up job	2026-11-28T12:59:52.6351010Z ##[group]Runner Image
+x	Set up job	2026-11-28T12:59:52.6351832Z Image: ubuntu-26.04
+x	Set up job	2026-11-28T12:59:52.6352499Z Version: 20261122.9.1
+x	Set up job	2026-11-28T12:59:52.6353853Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261122.9/images/ubuntu/Ubuntu2604-Readme.md
+x	Set up job	2026-11-28T12:59:52.6356064Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261122.9
+x	Set up job	2026-11-28T12:59:52.6357372Z ##[endgroup]
+x	Set up job	2026-11-28T12:59:52.6358705Z ##[group]GITHUB_TOKEN Permissions
+x	Set up job	2026-11-28T12:59:52.6361051Z Contents: read
+x	Set up job	2026-11-28T12:59:52.6361804Z Metadata: read
+x	Set up job	2026-11-28T12:59:52.6362537Z ##[endgroup]
+x	Set up job	2026-11-28T12:59:52.6365053Z Secret source: Actions
+x	Set up job	2026-11-28T12:59:52.6366271Z Cache mode: write
+x	Set up job	2026-11-28T12:59:52.6367253Z Prepare workflow directory
+x	Set up job	2026-11-28T12:59:52.6775690Z Prepare all required actions
+x	Set up job	2026-11-28T12:59:52.6900399Z Complete job name: x
+x	Run echo "job x ran"	﻿2026-11-28T12:59:52.8131451Z ##[group]Run echo "job x ran"
+x	Run echo "job x ran"	2026-11-28T12:59:52.8132407Z ^[[36;1mecho "job x ran"^[[0m
+x	Run echo "job x ran"	2026-11-28T12:59:52.8451577Z shell: /usr/bin/bash -e {0}
+x	Run echo "job x ran"	2026-11-28T12:59:52.8452816Z ##[endgroup]
+x	Run echo "job x ran"	2026-11-28T12:59:52.8646378Z job x ran
+x	Complete job	﻿2026-11-28T12:59:52.8789353Z Cleaning up orphan processes
+probe	Set up job	﻿2026-11-28T12:59:58.8266762Z Current runner version: '2.338.2'
+probe	Set up job	2026-11-28T12:59:58.8341852Z ##[group]Runner Image Provisioner
+probe	Set up job	2026-11-28T12:59:58.8343622Z Hosted Compute Agent
+probe	Set up job	2026-11-28T12:59:58.8345525Z Version: 20261111.635
+probe	Set up job	2026-11-28T12:59:58.8346778Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+probe	Set up job	2026-11-28T12:59:58.8348059Z Build Date: 2026-11-11T01:49:01Z
+probe	Set up job	2026-11-28T12:59:58.8349214Z Worker ID: {5dffc517-f1de-41c4-8166-056071635df4}
+probe	Set up job	2026-11-28T12:59:58.8350659Z Region: westus
+probe	Set up job	2026-11-28T12:59:58.8351671Z Cloud: Azure
+probe	Set up job	2026-11-28T12:59:58.8352681Z ##[endgroup]
+probe	Set up job	2026-11-28T12:59:58.8355908Z ##[group]Operating System
+probe	Set up job	2026-11-28T12:59:58.8357047Z Ubuntu
+probe	Set up job	2026-11-28T12:59:58.8358132Z 26.04.1
+probe	Set up job	2026-11-28T12:59:58.8359026Z LTS
+probe	Set up job	2026-11-28T12:59:58.8359939Z ##[endgroup]
+probe	Set up job	2026-11-28T12:59:58.8360890Z ##[group]Runner Image
+probe	Set up job	2026-11-28T12:59:58.8361905Z Image: ubuntu-26.04
+probe	Set up job	2026-11-28T12:59:58.8363085Z Version: 20261122.9.1
+probe	Set up job	2026-11-28T12:59:58.8385474Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261122.9/images/ubuntu/Ubuntu2604-Readme.md
+probe	Set up job	2026-11-28T12:59:58.8389654Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261122.9
+probe	Set up job	2026-11-28T12:59:58.8391414Z ##[endgroup]
+probe	Set up job	2026-11-28T12:59:58.8393655Z ##[group]GITHUB_TOKEN Permissions
+probe	Set up job	2026-11-28T12:59:58.8416609Z Contents: read
+probe	Set up job	2026-11-28T12:59:58.8417655Z Metadata: read
+probe	Set up job	2026-11-28T12:59:58.8418656Z ##[endgroup]
+probe	Set up job	2026-11-28T12:59:58.8422001Z Secret source: Actions
+probe	Set up job	2026-11-28T12:59:58.8423556Z Cache mode: write
+probe	Set up job	2026-11-28T12:59:58.8425653Z Prepare workflow directory
+probe	Set up job	2026-11-28T12:59:58.8965888Z Prepare all required actions
+probe	Set up job	2026-11-28T12:59:58.9016251Z Getting action download info
+probe	Set up job	2026-11-28T12:59:59.2280313Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+probe	Set up job	2026-11-28T12:59:59.4515437Z Complete job name: probe
+probe	Run actions/checkout@v7	﻿2026-11-28T12:59:59.5680494Z ##[group]Run actions/checkout@v7
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5681629Z with:
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5682479Z   repository: candavere/actioncheck-probe2
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5687829Z   token: ***
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5688307Z   ssh-strict: true
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5688754Z   ssh-user: git
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5689202Z   persist-credentials: true
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5689695Z   clean: true
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5690153Z   sparse-checkout-cone-mode: true
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5690692Z   fetch-depth: 1
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5691125Z   fetch-tags: false
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5691577Z   show-progress: true
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5692029Z   lfs: false
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5692935Z   submodules: false
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5693411Z   set-safe-directory: true
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5694372Z   allow-unsafe-pr-checkout: false
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.5695397Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9276782Z Syncing repository: candavere/actioncheck-probe2
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9280323Z ##[group]Getting Git version info
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9282585Z Working directory is '/home/runner/work/actioncheck-probe2/actioncheck-probe2'
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9289670Z [command]/usr/bin/git version
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9329121Z git version 2.56.1
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9369914Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9396034Z Temporarily overriding HOME='/home/runner/work/_temp/14298c8c-d342-4aa2-a5ce-398761276606' before making global git config changes
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9418299Z Adding repository directory to the temporary git global config as a safe directory
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9421205Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/actioncheck-probe2/actioncheck-probe2
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9525221Z Deleting the contents of '/home/runner/work/actioncheck-probe2/actioncheck-probe2'
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9528891Z ##[group]Determining repository object format
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9531355Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9533174Z ##[group]Initializing the repository
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9536519Z [command]/usr/bin/git init /home/runner/work/actioncheck-probe2/actioncheck-probe2
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9754084Z hint: Using 'master' as the name for the initial branch. This default branch name
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9793998Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9801361Z hint: to use in all of your new repositories, which will suppress this warning,
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9839541Z hint: call:
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9858001Z hint:
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9885334Z hint: 	git config --global init.defaultBranch <name>
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9905036Z hint:
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9935089Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9955336Z hint: 'development'. The just-created branch can be renamed via this command:
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9984884Z hint:
+probe	Run actions/checkout@v7	2026-11-28T12:59:59.9988890Z hint: 	git branch -m <name>
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0005168Z hint:
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0041360Z hint: Disable this message with "git config set advice.defaultBranchName false"
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0053668Z Initialized empty Git repository in /home/runner/work/actioncheck-probe2/actioncheck-probe2/.git/
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0125504Z [command]/usr/bin/git remote add origin https://github.com/candavere/actioncheck-probe2
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0166058Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0185645Z ##[group]Disabling automatic garbage collection
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0204919Z [command]/usr/bin/git config --local gc.auto 0
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0281684Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0301772Z ##[group]Setting up auth
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0303519Z Removing SSH command configuration
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0306643Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.0313090Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.1248396Z Removing HTTP extra header
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.1254859Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.1305212Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.1619785Z Removing includeIf entries pointing to credentials config files
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.1622414Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.1664810Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.1988674Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.2038908Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git.path /home/runner/work/_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.2080193Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.2124823Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.2164554Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.2202818Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.2205099Z ##[group]Fetching the repository
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.2212378Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e346e689dc54711041027757b894c952abda80c8:refs/remotes/origin/main
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5735644Z From https://github.com/candavere/actioncheck-probe2
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5752671Z  * [new ref]         e346e689dc54711041027757b894c952abda80c8 -> origin/main
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5767892Z [command]/usr/bin/git branch --list --remote origin/main
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5780564Z   origin/main
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5795214Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5824819Z e346e689dc54711041027757b894c952abda80c8
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5830131Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5832251Z ##[group]Determining the checkout info
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5834688Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5836371Z [command]/usr/bin/git sparse-checkout disable
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5903235Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5945820Z ##[group]Checking out the ref
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.5950601Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.6049217Z Switched to a new branch 'main'
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.6055200Z branch 'main' set up to track 'origin/main'.
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.6069418Z ##[endgroup]
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.6129338Z [command]/usr/bin/git log -1 --format=%H
+probe	Run actions/checkout@v7	2026-11-28T13:00:00.6165793Z e346e689dc54711041027757b894c952abda80c8
+probe	control (workflow step)	﻿2026-11-28T13:00:00.6470707Z ##[group]Run echo "CONTROL3 needs=[$N] vars=[$V]"
+probe	control (workflow step)	2026-11-28T13:00:00.6471629Z ^[[36;1mecho "CONTROL3 needs=[$N] vars=[$V]"^[[0m
+probe	control (workflow step)	2026-11-28T13:00:00.6509680Z shell: /usr/bin/bash -e {0}
+probe	control (workflow step)	2026-11-28T13:00:00.6510294Z env:
+probe	control (workflow step)	2026-11-28T13:00:00.6510732Z   N: success
+probe	control (workflow step)	2026-11-28T13:00:00.6511202Z   V: probe-value
+probe	control (workflow step)	2026-11-28T13:00:00.6511671Z ##[endgroup]
+probe	control (workflow step)	2026-11-28T13:00:00.6602256Z CONTROL3 needs=[success] vars=[probe-value]
+probe	Run ./.github/actions/p3-needs-eq	﻿2026-11-28T13:00:00.6738695Z Prepare all required actions
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.6789514Z ##[group]Run ./.github/actions/p3-needs-eq
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.6790231Z ##[endgroup]
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.6851647Z ##[start-action display=Run echo "PROBE3 p3-needs-eq ran";id=needs_eq.__run]
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.7002618Z ##[group]Run echo "PROBE3 p3-needs-eq ran"
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.7004108Z ^[[36;1mecho "PROBE3 p3-needs-eq ran"^[[0m
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.7045282Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.7046070Z ##[endgroup]
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.7120908Z PROBE3 p3-needs-eq ran
+probe	Run ./.github/actions/p3-needs-eq	2026-11-28T13:00:00.7147018Z ##[end-action id=needs_eq.__run;outcome=success;conclusion=success;duration_ms=29]
+probe	Run ./.github/actions/p3-needs-neg	﻿2026-11-28T13:00:00.7199369Z Prepare all required actions
+probe	Run ./.github/actions/p3-needs-neg	2026-11-28T13:00:00.7243675Z ##[group]Run ./.github/actions/p3-needs-neg
+probe	Run ./.github/actions/p3-needs-neg	2026-11-28T13:00:00.7244699Z ##[endgroup]
+probe	Run ./.github/actions/p3-needs-neg	2026-11-28T13:00:00.7250644Z ##[start-action display=Run echo "PROBE3 p3-needs-neg ran";id=needs_neg.__run]
+probe	Run ./.github/actions/p3-needs-neg	2026-11-28T13:00:00.7261694Z ##[end-action id=needs_neg.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+probe	Run ./.github/actions/p3-needs-wrapped	﻿2026-11-28T13:00:00.7418964Z ##[error]/home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-needs-wrapped/action.yml (Line: 6, Col: 11): Unrecognized named-value: 'needs'. Located at position 1 within expression: needs.x.result == 'success'
+probe	Run ./.github/actions/p3-needs-wrapped	2026-11-28T13:00:00.7432022Z ##[error]/home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-needs-wrapped/action.yml (Line: 6, Col: 11): Unexpected symbol: '${{'. Located at position 1 within expression: ${{ needs.x.result == 'success' }}
+probe	Run ./.github/actions/p3-needs-wrapped	2026-11-28T13:00:00.7453066Z ##[error]GitHub.DistributedTask.ObjectTemplating.TemplateValidationException: The template is not valid. /home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-needs-wrapped/action.yml (Line: 6, Col: 11): Unrecognized named-value: 'needs'. Located at position 1 within expression: needs.x.result == 'success',/home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-needs-wrapped/action.yml (Line: 6, Col: 11): Unexpected symbol: '${{'. Located at position 1 within expression: ${{ needs.x.result == 'success' }}
+probe	Run ./.github/actions/p3-needs-wrapped	   at GitHub.DistributedTask.ObjectTemplating.TemplateValidationErrors.Check()
+probe	Run ./.github/actions/p3-needs-wrapped	   at GitHub.Runner.Worker.ActionManifestManagerLegacy.ConvertRuns(IExecutionContext executionContext, TemplateContext templateContext, TemplateToken inputsToken, String fileRelativePath, MappingToken outputs)
+probe	Run ./.github/actions/p3-needs-wrapped	   at GitHub.Runner.Worker.ActionManifestManagerLegacy.Load(IExecutionContext executionContext, String manifestFile)
+probe	Run ./.github/actions/p3-needs-wrapped	2026-11-28T13:00:00.7477215Z ##[error]Failed to load /home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-needs-wrapped/action.yml
+probe	Run ./.github/actions/p3-vars-eq	﻿2026-11-28T13:00:00.7528538Z Prepare all required actions
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7571502Z ##[group]Run ./.github/actions/p3-vars-eq
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7572145Z ##[endgroup]
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7578122Z ##[start-action display=Run echo "PROBE3 p3-vars-eq ran";id=vars_eq.__run]
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7610449Z ##[group]Run echo "PROBE3 p3-vars-eq ran"
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7611132Z ^[[36;1mecho "PROBE3 p3-vars-eq ran"^[[0m
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7645399Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7646126Z ##[endgroup]
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7713137Z PROBE3 p3-vars-eq ran
+probe	Run ./.github/actions/p3-vars-eq	2026-11-28T13:00:00.7724831Z ##[end-action id=vars_eq.__run;outcome=success;conclusion=success;duration_ms=14]
+probe	Run ./.github/actions/p3-vars-neg	﻿2026-11-28T13:00:00.7765497Z Prepare all required actions
+probe	Run ./.github/actions/p3-vars-neg	2026-11-28T13:00:00.7809010Z ##[group]Run ./.github/actions/p3-vars-neg
+probe	Run ./.github/actions/p3-vars-neg	2026-11-28T13:00:00.7809648Z ##[endgroup]
+probe	Run ./.github/actions/p3-vars-neg	2026-11-28T13:00:00.7815435Z ##[start-action display=Run echo "PROBE3 p3-vars-neg ran";id=vars_neg.__run]
+probe	Run ./.github/actions/p3-vars-neg	2026-11-28T13:00:00.7822805Z ##[end-action id=vars_neg.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+probe	Run ./.github/actions/p3-vars-wrapped	﻿2026-11-28T13:00:00.7865459Z ##[error]/home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-vars-wrapped/action.yml (Line: 6, Col: 11): Unrecognized named-value: 'vars'. Located at position 1 within expression: vars.X == 'probe-value'
+probe	Run ./.github/actions/p3-vars-wrapped	2026-11-28T13:00:00.7872244Z ##[error]/home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-vars-wrapped/action.yml (Line: 6, Col: 11): Unexpected symbol: '${{'. Located at position 1 within expression: ${{ vars.X == 'probe-value' }}
+probe	Run ./.github/actions/p3-vars-wrapped	2026-11-28T13:00:00.7893263Z ##[error]GitHub.DistributedTask.ObjectTemplating.TemplateValidationException: The template is not valid. /home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-vars-wrapped/action.yml (Line: 6, Col: 11): Unrecognized named-value: 'vars'. Located at position 1 within expression: vars.X == 'probe-value',/home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-vars-wrapped/action.yml (Line: 6, Col: 11): Unexpected symbol: '${{'. Located at position 1 within expression: ${{ vars.X == 'probe-value' }}
+probe	Run ./.github/actions/p3-vars-wrapped	   at GitHub.DistributedTask.ObjectTemplating.TemplateValidationErrors.Check()
+probe	Run ./.github/actions/p3-vars-wrapped	   at GitHub.Runner.Worker.ActionManifestManagerLegacy.ConvertRuns(IExecutionContext executionContext, TemplateContext templateContext, TemplateToken inputsToken, String fileRelativePath, MappingToken outputs)
+probe	Run ./.github/actions/p3-vars-wrapped	   at GitHub.Runner.Worker.ActionManifestManagerLegacy.Load(IExecutionContext executionContext, String manifestFile)
+probe	Run ./.github/actions/p3-vars-wrapped	2026-11-28T13:00:00.7911367Z ##[error]Failed to load /home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-vars-wrapped/action.yml
+probe	Run ./.github/actions/p3-bogus-if	﻿2026-11-28T13:00:00.7953211Z ##[error]/home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-bogus-if/action.yml (Line: 6, Col: 11): Unrecognized named-value: 'bogus'. Located at position 1 within expression: bogus.x == ''
+probe	Run ./.github/actions/p3-bogus-if	2026-11-28T13:00:00.7983649Z ##[error]GitHub.DistributedTask.ObjectTemplating.TemplateValidationException: The template is not valid. /home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-bogus-if/action.yml (Line: 6, Col: 11): Unrecognized named-value: 'bogus'. Located at position 1 within expression: bogus.x == ''
+probe	Run ./.github/actions/p3-bogus-if	   at GitHub.DistributedTask.ObjectTemplating.TemplateValidationErrors.Check()
+probe	Run ./.github/actions/p3-bogus-if	   at GitHub.Runner.Worker.ActionManifestManagerLegacy.ConvertRuns(IExecutionContext executionContext, TemplateContext templateContext, TemplateToken inputsToken, String fileRelativePath, MappingToken outputs)
+probe	Run ./.github/actions/p3-bogus-if	   at GitHub.Runner.Worker.ActionManifestManagerLegacy.Load(IExecutionContext executionContext, String manifestFile)
+probe	Run ./.github/actions/p3-bogus-if	2026-11-28T13:00:00.8013170Z ##[error]Failed to load /home/runner/work/actioncheck-probe2/actioncheck-probe2/./.github/actions/p3-bogus-if/action.yml
+probe	summary	﻿2026-11-28T13:00:00.8089148Z ##[group]Run echo "SUMMARY3 needs_eq=success needs_neg=success needs_wrapped=failure vars_eq=success vars_neg=success vars_wrapped=failure bogus_if=failure"
+probe	summary	2026-11-28T13:00:00.8091259Z ^[[36;1mecho "SUMMARY3 needs_eq=success needs_neg=success needs_wrapped=failure vars_eq=success vars_neg=success vars_wrapped=failure bogus_if=failure"^[[0m
+probe	summary	2026-11-28T13:00:00.8125982Z shell: /usr/bin/bash -e {0}
+probe	summary	2026-11-28T13:00:00.8126579Z ##[endgroup]
+probe	summary	2026-11-28T13:00:00.8195644Z SUMMARY3 needs_eq=success needs_neg=success needs_wrapped=failure vars_eq=success vars_neg=success vars_wrapped=failure bogus_if=failure
+probe	Post Run actions/checkout@v7	﻿2026-11-28T13:00:00.8373438Z Post job cleanup.
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9513687Z [command]/usr/bin/git version
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9606337Z git version 2.56.1
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9696279Z Temporarily overriding HOME='/home/runner/work/_temp/213f3782-4663-4837-ba9d-e22077dc91ec' before making global git config changes
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9701919Z Adding repository directory to the temporary git global config as a safe directory
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9726720Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/actioncheck-probe2/actioncheck-probe2
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9783697Z Removing SSH command configuration
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9788191Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:00.9880039Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.0411493Z Removing HTTP extra header
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.0439316Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.0528782Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1004927Z Removing includeIf entries pointing to credentials config files
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1066960Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1085095Z includeif.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1095222Z includeif.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git/worktrees/*.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1114507Z includeif.gitdir:/github/workspace/.git.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1134905Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1174964Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1211476Z /home/runner/work/_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1257351Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-8c3c6f55\-3562\-4bf5\-8d02\-db9e2424739f\.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1326067Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git/worktrees/*.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1329586Z /home/runner/work/_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1397571Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/actioncheck-probe2/actioncheck-probe2/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-8c3c6f55\-3562\-4bf5\-8d02\-db9e2424739f\.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1445458Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1465499Z /github/runner_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1501712Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-8c3c6f55\-3562\-4bf5\-8d02\-db9e2424739f\.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1568185Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1599600Z /github/runner_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1611030Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-8c3c6f55\-3562\-4bf5\-8d02\-db9e2424739f\.config
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1655275Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+probe	Post Run actions/checkout@v7	2026-11-28T13:00:01.1978552Z Removing credentials config '/home/runner/work/_temp/git-credentials-8c3c6f55-3562-4bf5-8d02-db9e2424739f.config'
+probe	Complete job	﻿2026-11-28T13:00:01.2157615Z Cleaning up orphan processes

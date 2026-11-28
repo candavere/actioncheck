@@ -1,0 +1,8 @@
+name: p-vars-if
+description: vars in a composite step's if field
+runs:
+  using: composite
+  steps:
+    - if: vars.X != ''
+      shell: bash
+      run: echo "PROBE2 vars-if ran"

@@ -1,0 +1,8 @@
+name: p-vars-workdir
+description: vars in a composite step's working-directory field
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      working-directory: ${{ vars.X && '.' || '.' }}
+      run: echo "PROBE2 vars-workdir ran in $PWD"

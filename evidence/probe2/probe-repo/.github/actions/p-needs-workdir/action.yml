@@ -1,0 +1,8 @@
+name: p-needs-workdir
+description: needs in a composite step's working-directory field
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      working-directory: ${{ needs.x.result && '.' || '.' }}
+      run: echo "PROBE2 needs-workdir ran in $PWD"

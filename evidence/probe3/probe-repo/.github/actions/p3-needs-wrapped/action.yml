@@ -1,0 +1,8 @@
+name: p3-needs-wrapped
+description: needs in wrapped if (expect ran)
+runs:
+  using: composite
+  steps:
+    - if: ${{ needs.x.result == 'success' }}
+      shell: bash
+      run: echo "PROBE3 p3-needs-wrapped ran"

@@ -1,0 +1,8 @@
+name: p3-bogus-if
+description: unknown context in if, control that checks whether if validates names
+runs:
+  using: composite
+  steps:
+    - if: bogus.x == ''
+      shell: bash
+      run: echo "PROBE3 p3-bogus-if ran"

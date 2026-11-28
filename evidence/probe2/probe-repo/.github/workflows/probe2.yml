@@ -1,0 +1,49 @@
+name: probe2
+on:
+  workflow_dispatch:
+  push:
+permissions:
+  contents: read
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "job x ran"
+  probe:
+    needs: x
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: control (workflow step)
+        if: needs.x.result != '' && vars.X != ''
+        env:
+          N: ${{ needs.x.result }}
+          V: ${{ vars.X }}
+        run: echo "CONTROL2 needs=[$N] vars=[$V]"
+      - id: needs_if
+        continue-on-error: true
+        uses: ./.github/actions/p-needs-if
+      - id: needs_env
+        continue-on-error: true
+        uses: ./.github/actions/p-needs-env
+      - id: needs_with
+        continue-on-error: true
+        uses: ./.github/actions/p-needs-with
+      - id: needs_workdir
+        continue-on-error: true
+        uses: ./.github/actions/p-needs-workdir
+      - id: vars_if
+        continue-on-error: true
+        uses: ./.github/actions/p-vars-if
+      - id: vars_env
+        continue-on-error: true
+        uses: ./.github/actions/p-vars-env
+      - id: vars_with
+        continue-on-error: true
+        uses: ./.github/actions/p-vars-with
+      - id: vars_workdir
+        continue-on-error: true
+        uses: ./.github/actions/p-vars-workdir
+      - name: summary
+        if: always()
+        run: echo "SUMMARY2 needs_if=${{ steps.needs_if.outcome }} needs_env=${{ steps.needs_env.outcome }} needs_with=${{ steps.needs_with.outcome }} needs_workdir=${{ steps.needs_workdir.outcome }} vars_if=${{ steps.vars_if.outcome }} vars_env=${{ steps.vars_env.outcome }} vars_with=${{ steps.vars_with.outcome }} vars_workdir=${{ steps.vars_workdir.outcome }}"

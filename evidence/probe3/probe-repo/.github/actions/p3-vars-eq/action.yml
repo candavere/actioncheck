@@ -1,0 +1,8 @@
+name: p3-vars-eq
+description: vars in if, exact match (expect ran)
+runs:
+  using: composite
+  steps:
+    - if: vars.X == 'probe-value'
+      shell: bash
+      run: echo "PROBE3 p3-vars-eq ran"

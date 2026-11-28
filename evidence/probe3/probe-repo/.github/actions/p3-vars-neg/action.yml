@@ -1,0 +1,8 @@
+name: p3-vars-neg
+description: vars in if, wrong value (expect no ran line)
+runs:
+  using: composite
+  steps:
+    - if: vars.X == 'nope'
+      shell: bash
+      run: echo "PROBE3 p3-vars-neg ran"
